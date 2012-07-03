@@ -28,10 +28,11 @@ The remaining imports are not very interesting.
 > import Data.Monoid
 > import System.FilePath
 
-> import Text.Blaze.Html5((!))
+> import Text.Blaze.Internal (preEscapedString)
+> import Text.Blaze.Html5 ((!))
 > import qualified Text.Blaze.Html5 as H
 > import qualified Text.Blaze.Html5.Attributes as A
-> import Text.Blaze.Renderer.String
+> import Text.Blaze.Html.Renderer.String (renderHtml)
 
 > import Hakyll
 
@@ -250,7 +251,7 @@ Haskell, respectively.
 > addHacks = requireAllA (inGroup $ Just "hacks") (arr asList)
 >   where asList (p,hs) =
 >           p { pageBody = pageBody p ++ renderHtml (H.ul $ mapM_ asLi hs) }
->         asLi = H.li . H.preEscapedString . pageBody
+>         asLi = H.li . preEscapedString . pageBody
 
 Listing configuration files.
 ---
@@ -298,9 +299,6 @@ a button pointing to it.
 
 Putting it all together
 ---
-
-> complement :: Pattern a -> Pattern a
-> complement p = predicate (not . matches p)
 
 > main :: IO ()
 > main = hakyllWith config $ do
@@ -365,9 +363,16 @@ Putting it all together
 >                >>> applyTemplateCompiler "templates/default.html"
 >                >>> relativizeUrlsCompiler
 
+The title of a page is the value of the metadata field @"title"@, if
+available, and otherwise a cleaned up version of its identifier.
+Recall that this is essentially just its path.
+
 > setTitle :: Compiler (Page b) (Page b)
-> setTitle = id &&& getIdentifier >>> setFieldA "title" (arr title)
->   where title = dropIndex . dropExtension . toFilePath
+> setTitle = proc p -> do
+>   path <- getIdentifier -< p
+>   let title = fromMaybe (clean path) (getFieldMaybe "title" p)
+>   returnA -< setField "title" title p
+>   where clean = dropIndex . dropExtension . toFilePath
 
 > manCompiler :: Compiler Resource (Page String)
 > manCompiler = getResourceString
