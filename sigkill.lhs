@@ -270,7 +270,7 @@ Listing configuration files.
 >         asLi l = case progname l of
 >                    Nothing -> return ()
 >                    Just k | "." `isPrefixOf` k -> return ()
->                           | otherwise -> H.li $ do
+>                           | otherwise -> H.li $
 >                               H.toHtml k >> H.ul (mapM_ disp l)
 >         disp (c,u) = H.li $ H.a (H.toHtml $ filename c)
 >                           ! A.href (H.toValue $ '/':u)
@@ -349,7 +349,7 @@ Putting it all together
 > static :: Rules
 > static = route idRoute >> compile copyFileCompiler >> return ()
 
-> destInGroup :: (Maybe String) -> Compiler a (Maybe String)
+> destInGroup :: Maybe String -> Compiler a (Maybe String)
 > destInGroup g = getIdentifier >>> arr (setGroup g) >>> getRouteFor
 
 > normalDest :: Compiler a String
