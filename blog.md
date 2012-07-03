@@ -1,3 +1,8 @@
+---
+title: Blog
+---
+
+
 Remnants of my old blog
 ====
 

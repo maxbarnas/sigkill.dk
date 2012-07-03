@@ -1,3 +1,7 @@
+---
+title: Hakyll tutorial
+---
+
 Opinionated Hakyll Tutorial
 ===
 

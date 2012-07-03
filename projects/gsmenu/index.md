@@ -1,4 +1,8 @@
-`gsmenu` - a visual menu program
+---
+title: gsmenu
+---
+
+A generic visual menu program
 ===============================
 
 Inspired by

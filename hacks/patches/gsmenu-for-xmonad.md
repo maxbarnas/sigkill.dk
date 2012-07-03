@@ -1,3 +1,7 @@
+---
+title: gsmenu support for XMonad
+---
+
 `gsmenu` support for XMonad
 ===========================
 

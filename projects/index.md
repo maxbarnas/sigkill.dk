@@ -1,3 +1,7 @@
+---
+title: My projects
+---
+
 Repository of programs written by me
 ========
 

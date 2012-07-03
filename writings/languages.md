@@ -1,3 +1,7 @@
+---
+title: Languages in one sentence
+---
+
 Programming languages in a sentence
 ===
 

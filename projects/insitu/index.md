@@ -1,4 +1,8 @@
-`insitu` - modify files in place with shell commands
+---
+title: insitu
+---
+
+Modify files in place with shell commands
 ====================================================
 
 A shell pipeline cannot both read and write to the same file; for

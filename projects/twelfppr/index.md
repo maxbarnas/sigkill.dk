@@ -1,4 +1,8 @@
-`twelfppr` - a prettyprinter for [Twelf](http://twelf.org/wiki/Main_Page)
+---
+title: TwelfPPR
+---
+
+Prettyprinter for [Twelf](http://twelf.org/wiki/Main_Page)
 ===
 
 Twelf is a language used for describing and proving properties about

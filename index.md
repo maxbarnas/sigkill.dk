@@ -1,3 +1,7 @@
+---
+title: Front page
+---
+
 Troels Henriksen's website
 ================================
 

@@ -1,4 +1,8 @@
-Sindre - a programming language for writing simple GUIs
+---
+title: Sindre
+---
+
+Programming language for writing simple GUIs
 ===
 
 I am writing a programming language called Sindre.  It is still very

@@ -1,3 +1,7 @@
+---
+title: Shell scripting
+---
+
 Shell Scripting Tricks
 ==
 

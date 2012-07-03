@@ -1,3 +1,7 @@
+---
+title: Hacks
+---
+
 Minor scripts, hacks and patches
 ===========
 
