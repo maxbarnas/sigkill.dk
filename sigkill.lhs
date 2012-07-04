@@ -1,12 +1,12 @@
 The Sigkill.dk generator
 ===
 
-This is the Hakyll program for generating sigkill.dk.  Look at [this
-Git repository](https://github.com/Athas/sigkill.dk) for the data
-files as well.  The most defining trait of the site is the tree menu
-at the top, which contains every content page on the site.  Apart from
-that, I also do a lot of small hacks to generate various bits of the
-site.
+This is the Hakyll program for generating sigkill.dk (see my [Hakyll
+tutorial](/writings/guides/hakyll.html)).  Look at [this Git
+repository](https://github.com/Athas/sigkill.dk) for the data files as
+well.  The most defining trait of the site is the tree menu at the
+top, which contains every content page on the site.  Apart from that,
+I also do a lot of small hacks to generate various bits of the site.
 
 > {-# LANGUAGE OverloadedStrings, Arrows #-}
 > module Main(main) where
@@ -171,9 +171,26 @@ dropping any trailing "index.html" from paths.
 >         this' = normalise this
 
 For convenience, we define a Hakyll rule that adds the route of the
-current selection to the group "menu".  This group will contain an
-identifier for every page that should show up in the site menu, with
-the compiler for each identifier generating a pathname.
+current selection to the group "menu".  To do this, we first need two
+convenience functions.  The first checks whether the identifier of the
+current compilation is present in some other group (recall that a
+group is identified by a `Maybe String`, not just a `String`), and if
+so, returns the route of that identifier.
+
+> destInGroup :: Maybe String -> Compiler a (Maybe String)
+> destInGroup g = getIdentifier >>> arr (setGroup g) >>> getRouteFor
+
+The second extracts the route for the current identifier in the global
+group.  As a matter of convenience, we return an empty path if the
+identifier has no associated route.  This should never occur in
+practice.
+
+> normalDest :: Compiler a String
+> normalDest = destInGroup Nothing >>> arr (fromMaybe "#")
+
+The `"menu"` group will contain an identifier for every page that
+should show up in the site menu, with the compiler for each identifier
+generating a pathname.
 
 > addToMenu :: Rules
 > addToMenu = group "menu" $ mapM_ (`create` normalDest) =<< resources
@@ -206,6 +223,10 @@ markup, so the challenge becomes extracting that comment.  I define
 functions for extracting the leading comment from shell, C and
 Haskell, respectively.
 
+For shell scripts, we take all leading lines that have a comment
+character in the first column, excepting the hashbang (`#!`).  This
+also works for many other languages.
+
 > shDocstring :: String -> String
 > shDocstring = unlines
 >               . map (drop 2)
@@ -213,6 +234,9 @@ Haskell, respectively.
 >               . dropWhile (all (`elem` "# "))
 >               . dropWhile ("#!" `isPrefixOf`)
 >               . lines
+
+For C, we extract the first multi-line comment.  At this point we
+should probably have used a regular expression library.
 
 > cDocstring :: String -> String
 > cDocstring = unlines
@@ -227,12 +251,19 @@ Haskell, respectively.
 >   where cut s | "/*" `isPrefixOf` s = cut $ drop 2 s
 >               | otherwise = dropWhile isSpace s
 
+Haskell is processed much like shell script: We extract the leading line comments.
+
 > hsDocstring :: String -> String
 > hsDocstring = unlines
 >               . map (drop 3)
 >               . takeWhile ("--" `isPrefixOf`)
 >               . dropWhile ("#!" `isPrefixOf`)
 >               . lines
+
+A *hack compiler* is a compiler from a `Resource` (that is, the
+script) to a `String` containing its name and docstring in HTML
+format.  The docstring is assumed to be in Markdown format, so we pass
+the entire thing through a Markdown-to-HTML compiler.
 
 > hackCompiler :: Compiler Resource (Page String)
 > hackCompiler = proc r -> do
@@ -247,6 +278,9 @@ Haskell, respectively.
 >        . uncurry (readPandoc Markdown))
 >         -< (Just ident, "[`"++name++"`](/"++dest++")\n" ++"---\n"++desc)
 
+To add the list of hacks to a page, we retrieve all elements of the
+group `"hacks"`, then format them as a list.
+
 > addHacks :: Compiler (Page String) (Page String)
 > addHacks = requireAllA (inGroup $ Just "hacks") (arr asList)
 >   where asList (p,hs) =
@@ -256,11 +290,19 @@ Haskell, respectively.
 Listing configuration files.
 ---
 
+The set of configuration files is a set of `Page FilePath`s.  The
+first directory component of each path is the program the file belongs
+to.  We define the `groupPaths` function to group the paths according
+to their program name.
+
 > groupPaths :: [Page FilePath] -> [[(FilePath,FilePath)]]
 > groupPaths = map collapse . groupBy samedir . sortBy (comparing dir)
 >   where samedir x y = dir x == dir y && dir x /= ["./"]
 >         dir = take 1 . splitPath . addTrailingPathSeparator . takeDirectory . pageBody
 >         collapse = map (pageBody &&& getField "url")
+
+Adding the list of configuration files to a page is just a messy
+construction of a list.
 
 > addConfigs :: Compiler (Page String) (Page String)
 > addConfigs = requireAllA (inGroup $ Just "configs")
@@ -287,7 +329,8 @@ Including file sources
 ---
 
 If the page we're compiling has a path in the "source" group, generate
-a button pointing to it.
+a button pointing to it.  This is done by appending to the
+`"topitems"` field, which is used in the HTML template.
 
 > addSourceButton :: Compiler (Page a) (Page a)
 > addSourceButton = proc p -> do
@@ -300,25 +343,62 @@ a button pointing to it.
 Putting it all together
 ---
 
+I extend the default Hakyll configuration with information on how to
+use `rsync` to copy the site contents to the server.
+
+> config :: HakyllConfiguration
+> config = defaultHakyllConfiguration
+>   { deployCommand = "rsync --chmod=Do+rx,Fo+r --checksum -ave 'ssh -p 22' \
+>                      \_site/* --exclude pub athas@sigkill.dk:/var/www/sigkill.dk"
+>   }
+
+Now we're ready to describe the entire site.
+
 > main :: IO ()
 > main = hakyllWith config $ do
+
+CSS files are compressed, data files and my public key are copied
+verbatim.
+
 >   _ <- match "css/*" $ do
 >     route   idRoute
 >     compile compressCssCompiler
-
 >   _ <- match "files/**" static
-
 >   _ <- match "pubkey.asc" static
+
+One of our primary objectives is the ability to write content for the
+site without having to modify this generator program.  Therefore, we
+define *content* a non-hidden file contained in any of the directories
+`config`, `writings`, `hacks`, `programs` or `projects`, as well as
+any `.md` file in the root directory.  This property is checked by the
+`content` pattern.
+
+We divide the content into two sets: content *pages*, which is all
+content of types `.md`, `.lhs` and `.man`, and content *data, which is
+the rest.
 
 >   let inContentDir x = any (`matches` x)
 >                        ["config/**", "writings/**", "hacks/**"
 >                        , "programs/**", "projects/**", "*.md"]
->       content = predicate inContentDir `mappend` nothidden
 >       nothidden = mconcat [complement "**/.**", complement ".*/**"]
+>       content = predicate inContentDir `mappend` nothidden
 >       contentPages = content `mappend` regex "\\.(md|lhs|man)$"
 >       contentData = content `mappend` complement contentPages
 
+Content data is copied verbatim, as it is expected to be images and
+similar non-processable data.
+
 >   _ <- match contentData static
+
+Content pages will end up as HTML content, as need to be processed.
+This is conceptually a simple process: they are added to list of pages
+contained in the menu, processed by a *page compiler*, which is
+`manCompiler` for manpages, `pageCompiler` for all other files, and
+run through `finalizePage`, which is responsible for actually adding
+the menu and other final touchups.  Some pages also need special
+generated content: the hacks-page needs a list of hacks, and the
+config-page needs a list of configuration files.  These are
+special-cased in an intermediate step.
 
 >   _ <- match contentPages $ do
 >     route $ setExtension "html"
@@ -328,9 +408,25 @@ Putting it all together
 >                                ,("config/index.md", addConfigs)]
 >               >>> finalizePage
 
+The group `"source"` contains the source files of all literate
+programs.  This is practical, as the processed literate program will
+be an HTML file, and thus probably no longer compilable by the
+literate system.  While the user could in some cases copy the text
+from the browser into a source file (this is possible for literate
+Haskell), it is more convenient to have the original source file
+available.  Source files are, of course, copied verbatim.
+
 >   _ <- group "source" $ match (contentPages `mappend` "**lhs") static
 
+The group `"hacks"` contains small program descriptions generated by
+`hackCompiler`.  It is included by `addHacks`.
+
 >   _ <- group "hacks" $ match "hacks/scripts/*" $ compile hackCompiler
+
+The `"configs"` group is very similar to the `"hacks"` group.  Its
+pages each consist of the name of the configuration file, with a field
+`"url"` containing the path of the real configuration file.  The files
+themselves are handled as content data (see above).
 
 >   _ <- group "configs" $ match ("config/configs/**" `mappend` nothidden) $
 >     compile $ getIdentifier
@@ -338,22 +434,19 @@ Putting it all together
 >               >>> normalDest &&& arr fromBody
 >               >>> arr (uncurry $ setField "url")
 
+Finally, HTML templates are, of course, handled by the default
+template compiler.
+
 >   match "templates/*" $ compile templateCompiler
 
-> config :: HakyllConfiguration
-> config = defaultHakyllConfiguration
->   { deployCommand = "rsync --chmod=Do+rx,Fo+r --checksum -ave 'ssh -p 22' \
->                      \_site/* --exclude pub athas@sigkill.dk:/var/www/sigkill.dk"
->   }
+We're done with the main function.  All we need to do now is some
+fleshing out.  To start with, static files are merely copied into
+position.
 
 > static :: Rules
 > static = route idRoute >> compile copyFileCompiler >> return ()
 
-> destInGroup :: Maybe String -> Compiler a (Maybe String)
-> destInGroup g = getIdentifier >>> arr (setGroup g) >>> getRouteFor
-
-> normalDest :: Compiler a String
-> normalDest = destInGroup Nothing >>> arr (fromMaybe "/")
+Finalization performs all processing that is identical for all pages.
 
 > finalizePage :: Compiler (Page String) (Page String)
 > finalizePage = arr (trySetField "topitems" "")
@@ -363,7 +456,7 @@ Putting it all together
 >                >>> applyTemplateCompiler "templates/default.html"
 >                >>> relativizeUrlsCompiler
 
-The title of a page is the value of the metadata field @"title"@, if
+The title of a page is the value of the metadata field `"title"`, if
 available, and otherwise a cleaned up version of its identifier.
 Recall that this is essentially just its path.
 
@@ -374,8 +467,16 @@ Recall that this is essentially just its path.
 >   returnA -< setField "title" title p
 >   where clean = dropIndex . dropExtension . toFilePath
 
+Compiling man pages is done using the system `groff` program.  The
+output from `groff` will contain control characters (notably
+backspaces), which we process with `col -b` to generate plain text.
+Finally, we insert the text into an HTML `pre` element to preserve the
+whitespace formatting.
+
 > manCompiler :: Compiler Resource (Page String)
 > manCompiler = getResourceString
 >               >>> unixFilter "groff" (words "-m mandoc -T utf8")
 >               >>> unixFilter "col" ["-b"]
 >               >>> arr (fromBody . renderHtml . H.pre . H.toHtml)
+
+And that's it.
