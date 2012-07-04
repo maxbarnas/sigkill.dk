@@ -22,10 +22,17 @@ generated via the nifty Hakyll framework, although it used to be
 written in shell script via the pretty good [werc anti-framework][6].
 The source code is available [here][sigkillsource].
 
+In case all this is too boring for you, why not check out
+[topDatamat][7]?  It's a Danish (English subtitles) sketch show, sort
+of inspired by Top Gear, that we film in the basement under the
+department of computer science at the University of Copenhagen.  I'm
+involved as writer and (very poor) actor.
+
 [1]: /me
 [2]: /programs
 [3]: /config
 [4]: /hacks
 [5]: /blog
 [6]: http://werc.cat-v.org/
+[7]: http://topdatamat.dk
 [sigkillsource]: http://github.com/Athas/sigkill.dk
