@@ -7,7 +7,9 @@ Troels Henriksen's website
 
 Welcome to my website.  My name is Troels Henriksen, and I am a Danish
 hacker ([more about me][1]) and general enthusiast in all matters
-computing.
+computing.  I'm currently working as a research programmer and
+occasional teaching assistant at DIKU[diku], the computer science
+department at the University of Copenhagen.
 
 On this site I present [programs I have written][2], my [configuration
 files][3], and [minor scripts][4] that may of some amusement to
@@ -36,3 +38,4 @@ involved as writer and (very poor) actor.
 [6]: http://werc.cat-v.org/
 [7]: http://topdatamat.dk
 [sigkillsource]: http://github.com/Athas/sigkill.dk
+[diku]: http://diku.dk
