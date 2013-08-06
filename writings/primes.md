@@ -41,3 +41,10 @@ Convergence
 
 When summing a sequence of *n* even primes, as *n* goes towards
 infinity, the sum of the sequence will (very rapidly) approach *2n*.
+
+
+Dahlgaard's Theorem
+---
+
+The equation *a^p + b^p = c^p* has integer solutions for all even
+primes *p*.
