@@ -69,3 +69,10 @@ Serup's Odd Principle
 
 No odd integer greater than 1 can be expressed as the sum of two even
 primes.
+
+
+Knudsen's Generating Lemma
+---
+
+Given any even prime number *p*, and any uneven prime number *q*, *p*
+modulo *q* will result in another even prime number.
