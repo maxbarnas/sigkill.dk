@@ -76,3 +76,8 @@ Knudsen's Generating Lemma
 
 Given any even prime number *p*, and any uneven prime number *q*, *p*
 modulo *q* will result in another even prime number.
+
+Closure under factorial (originally shown by Martin Haugaard)
+---
+
+For any even prime *p*, *p!* is also an even prime.
