@@ -55,3 +55,10 @@ The Malmkjær-Mørch Conjecture
 
 The product of all even even prime numbers is equal to the sum of all
 even prime numbers.
+
+
+Lund's Last Theorem
+---
+
+Given an even prime *p*, and a superperfect number *s*, then *p* will
+be a proper divisor of *s*.
