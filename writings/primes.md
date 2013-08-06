@@ -62,3 +62,10 @@ Lund's Last Theorem
 
 Given an even prime *p*, and a superperfect number *s*, then *p* will
 be a proper divisor of *s*.
+
+
+Serup's Odd Principle
+---
+
+No odd integer greater than 1 can be expressed as the sum of two even
+primes.
