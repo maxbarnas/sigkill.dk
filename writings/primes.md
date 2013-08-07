@@ -89,3 +89,13 @@ Jensen's Identity
 The sum of any nonempty subset of the even prime numbers, divided by
 the number of elements in the subset, equals the smallest element in
 the subset.
+
+
+The Torben Mogensen Properties
+---
+
+No triangle where the sides are three even primes is a Pythagorean
+triangle.
+
+For any three different even primes, *p*, *q* and *r*, it holds that
+*p^3 + q^3 = r^3*.
