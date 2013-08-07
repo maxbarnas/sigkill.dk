@@ -81,3 +81,11 @@ Closure under factorial (originally shown by Martin Haugaard)
 ---
 
 For any even prime *p*, *p!* is also an even prime.
+
+
+Jensen's Identity
+---
+
+The sum of any nonempty subset of the even prime numbers, divided by
+the number of elements in the subset, equals the smallest element in
+the subset.
