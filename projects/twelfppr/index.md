@@ -14,3 +14,6 @@ more than second-order higher abstract syntax supported.  While still
 in need of some final touchups and some documentation, `twelfppr` is
 already somewhat useful.  You can check out the code on the [Github
 page](https://github.com/Athas/twelfppr).
+
+As far as I know, `twelfppr` should be able to handle the full Twelf
+language.
