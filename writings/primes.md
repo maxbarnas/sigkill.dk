@@ -99,3 +99,8 @@ triangle.
 
 For any three different even primes, *p*, *q* and *r*, it holds that
 *p^3 + q^3 = r^3*.
+
+Strake's Generator
+---
+
+Every number *(2^(n-1)*, where *n* is an even prime, is itself prime.
