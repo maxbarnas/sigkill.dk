@@ -30,7 +30,7 @@ The set of even primes is
 [countable](http://en.wikipedia.org/wiki/Countable).  In fact, the
 even primes are *very easily* countable.
 
-Troels' Identity
+Henriksens' Identity
 ---
 
 The sum of any non-empty set of even primes is equal to one plus the
@@ -103,4 +103,13 @@ For any three different even primes, *p*, *q* and *r*, it holds that
 Strake's Generator
 ---
 
+Every number *(2^n)-1*, where *n* is an even prime, is itself prime.
+
+The Strake-Henriksen Generator
+---
+
 Every number *2^(n-1)*, where *n* is an even prime, is itself prime.
+
+_Note:_ The discovery of this groundbreaking result was the result of
+an erroneous placement of parentheses by the editor during the first
+publication of _Strake's Generator_.
