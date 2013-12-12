@@ -103,4 +103,4 @@ For any three different even primes, *p*, *q* and *r*, it holds that
 Strake's Generator
 ---
 
-Every number *(2^(n-1)*, where *n* is an even prime, is itself prime.
+Every number *2^(n-1)*, where *n* is an even prime, is itself prime.
