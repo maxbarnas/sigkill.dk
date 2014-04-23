@@ -7,9 +7,8 @@ Troels Henriksen's website
 
 Welcome to my website.  My name is Troels Henriksen, and I am a Danish
 hacker ([more about me][1]) and general enthusiast in all matters
-computing.  I'm currently working as a research programmer and
-occasional teaching assistant at [DIKU][diku], the computer science
-department at the University of Copenhagen.
+computing.  I'm currently working as a PhD student at [DIKU][diku],
+the computer science department at the University of Copenhagen.
 
 On this site I present [programs I have written][2], my [configuration
 files][3], and [minor scripts][4] that may of some amusement to

@@ -7,7 +7,8 @@ Personal details
 
 My name is Troels Henriksen, I'm a hacker from Denmark.  Computer
 science is my greatest passion, and I study it at home as well as at
-the [University of Copenhagen](http://diku.dk).
+the [University of Copenhagen](http://diku.dk), where I work as a PhD
+student.
 
 My email address is <athas@sigkill.dk> and my public key is available
 [here](pubkey.asc).
