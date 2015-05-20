@@ -12,8 +12,6 @@
   <body>
     <div id="header">
       <div class="superHeader">
-        <div class="left">
-        </div>
 
         <div class="right">
           <span class="doNotDisplay">Related sites:</span>
@@ -39,8 +37,16 @@
 
     <div id="footer">
       <br class="doNotDisplay doNotPrint" />
-
       <a href="http://jaspervdj.be/hakyll/index.html" id="hakyllLink">Powered by Hakyll</a>
+
+      <span id="dates">
+        $if(published)$
+        <span id="publishedDate">First published $published$</span>
+        $endif$
+        $if(updated)$
+        <span id="updatedDate">Last updated $updated$</span>
+        $endif$
+      </span>
     </div>
   </body>
 </html>

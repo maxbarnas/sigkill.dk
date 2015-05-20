@@ -1,5 +1,7 @@
 ---
 title: Sindre
+published: 19-02-2012
+updated: 20-05-2015
 ---
 
 Programming language for writing simple GUIs
