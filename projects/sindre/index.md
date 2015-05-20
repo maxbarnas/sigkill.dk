@@ -10,7 +10,7 @@ I wrote a programming language called Sindre.  It came about after I
 got tired of writing simple X11 tools directly against the Xlib API.
 At the time I was doing a lot of shell scripting, and I had become
 enamored with the pattern-action mode of programming found in
-[Awk](http://en.wikipedia.org/wiki/AWK), and I realised I could
+[AWK](http://en.wikipedia.org/wiki/AWK), and I realised I could
 implement a similar language where the patterns were events (both from
 X11 and in the MVC sense), and the actions were... well, imperative
 code.  Combined with a simple way to declaratively specify the GUI, I
