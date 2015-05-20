@@ -4,6 +4,7 @@ title: TwelfPPR
 
 Prettyprinter for [Twelf](http://twelf.org/wiki/Main_Page)
 ===
+[Available on Github](https://github.com/Athas/twelfppr)
 
 Twelf is a language used for describing and proving properties about
 logical systems.  As part of a university project, I wrote a program

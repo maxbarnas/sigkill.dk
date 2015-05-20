@@ -4,6 +4,7 @@ title: gsmenu
 
 A generic visual menu program
 ===============================
+[Available on Github](http://github.com/Athas/gsmenu)
 
 Inspired by
 [GridSelect](http://blog.clemens.endorphin.org/2008/11/xmonad-gridselect.html)

@@ -4,7 +4,7 @@ title: Sindre
 
 Programming language for writing simple GUIs
 ===
-[(Available on Github)](https://github.com/Athas/Sindre)
+[Available on Github](https://github.com/Athas/Sindre)
 
 I wrote a programming language called Sindre.  It came about after I
 got tired of writing simple X11 tools directly against the Xlib API.

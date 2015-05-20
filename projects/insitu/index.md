@@ -4,6 +4,7 @@ title: insitu
 
 Modify files in place with shell commands
 ====================================================
+[Available on Github](http://github.com/Athas/insitu)
 
 A shell pipeline cannot both read and write to the same file; for
 example
