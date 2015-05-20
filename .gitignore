@@ -1,0 +1,8 @@
+# Hakyll cache
+_cache
+# Hakyll build directory
+_site
+# Build artifacts
+sigkill
+sigkill.o
+sigkill.hi
