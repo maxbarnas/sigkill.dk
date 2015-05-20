@@ -2,11 +2,11 @@ body {
   background-color: #eee;
   font-family: sans-serif;
   margin: auto;
-  width:900px;
+  max-width:900px;
 }
 
 body > * {
-  margin: 1%;
+    margin: 1%;
   text-align: justify;
 }
 
@@ -74,11 +74,12 @@ h2 {
 
 .subHeader ul {
   margin: 0;
+  list-style-type: none;
+  list-style-image: none;
 }
 
 .subHeader li {
-  display: inline;
-  list-style-type: none;
+  display: inline-block;
   border-right: 1px solid #000;
   margin: 0;
   padding: 0;
