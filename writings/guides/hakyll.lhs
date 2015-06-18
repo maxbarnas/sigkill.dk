@@ -42,7 +42,7 @@ containing the input files, which then generates the site as a set of
 output files.  Hence, we define a `Main` module that exports a `main`
 function and imports all the modules we'll need.  The
 `OverloadedStrings` language extension is a small convenience lets us
-write `"*.md"` instead of `parseGlob "*.md`.
+write `"*.md"` instead of `parseGlob "*.md"`.
 
 > {-# LANGUAGE OverloadedStrings #-}
 > module Main(main) where
@@ -109,7 +109,7 @@ given to `compile` must take a `Resource` as its input, which is
 really just a wrapper around an identifier guaranteed to refer to a
 file.
 
-[4]: [3]: https://hackage.haskell.org/package/hakyll-4.6.9.0/docs/Hakyll-Core-Rules.html
+[4]: https://hackage.haskell.org/package/hakyll-4.6.9.0/docs/Hakyll-Core-Rules.html
 
 A Menu
 ---
@@ -189,7 +189,7 @@ the existing extension (`md` according to the `content` pattern) with
 converts the page from Markdown to HTML, then applies an HTML
 template, then finally converts absolute URLs into relative URLs so
 the resulting files can be put anywhere (don't worry about this last
-stage, it's not important).  To understand how `loadAndApplyTEmpalte`
+stage, it's not important).  To understand how `loadAndApplyTemplate`
 works, we first have to understand Hakyll templates and contexts.
 Templates are simply files in which variables can be written as
 `$var$`.  When applying the template, each such instance is replaced
