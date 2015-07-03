@@ -2,7 +2,7 @@ body {
   background-color: #eee;
   font-family: sans-serif;
   margin: auto;
-  max-width:70em;
+  max-width:50em;
 }
 
 body > * {
