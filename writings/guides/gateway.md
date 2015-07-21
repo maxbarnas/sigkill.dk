@@ -22,7 +22,8 @@ Gateway setup
 --
 
 Run [this script](gateway.sh) on the gateway as root.  It sets up the
-actual forwarding and NATing in the kernel.
+actual forwarding and NATing in the kernel.  You will need to have the
+`iptable_nat` kernel module loaded.
 
 Then statically assign the gateway an IP adress on the `eth0`
 interface:
@@ -44,7 +45,7 @@ Now we must add the IP address of the gateway to the kernel routing table.
 
     # route add default gw 10.0.0.1
 
-Finally, you wil probably want to be able to perform DNS lookups on
+Finally, you will probably want to be able to perform DNS lookups on
 the client, so you should add the IP address of Googles free DNS
 server to the file `/etc/resolv.conf`.
 
