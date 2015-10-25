@@ -41,7 +41,7 @@ Hakyll is used by compiling and running a program in the directory
 containing the input files, which then generates the site as a set of
 output files.  Hence, we define a `Main` module that exports a `main`
 function and imports all the modules we'll need.  The
-`OverloadedStrings` language extension is a small convenience lets us
+`OverloadedStrings` language extension, as a small convenience, lets us
 write `"*.md"` instead of `parseGlob "*.md"`.
 
 > {-# LANGUAGE OverloadedStrings #-}
