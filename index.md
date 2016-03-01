@@ -11,7 +11,7 @@ computing.  I am presently working as a PhD student at [DIKU][diku],
 the computer science department at the University of Copenhagen, where
 I do research into optimising compilers for data-parallel language.
 Concretely, I am working on [an optimising compiler targeting
-GPUs][futhark]
+GPUs][futhark].
 
 On this site I present [programs I have written][2], my [configuration
 files][3], and [minor scripts][4] that may of some amusement to
