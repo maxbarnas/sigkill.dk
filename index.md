@@ -41,4 +41,4 @@ involved as writer and (very poor) actor.
 [7]: http://topdatamat.dk
 [sigkillsource]: http://github.com/Athas/sigkill.dk
 [diku]: http://diku.dk
-[futhark]: https://github.com/HIPERFIT/futhark
+[futhark]: http://futhark-lang.org
