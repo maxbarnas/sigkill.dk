@@ -265,11 +265,11 @@ the docstring is in a file of name `".md"`.
 >                     ".hs" -> hsDocstring src
 >                     _     -> shDocstring src
 >   dest <- normalRoute
+>   desc' <- renderPandoc $ Item ".md" desc
 >   let name = takeFileName dest
 >       ctx = constField "name" name <>
 >             constField "script" dest <>
->             constField "description"
->             (itemBody $ renderPandoc $ Item ".md" desc)
+>             constField "description" (itemBody desc')
 >   loadAndApplyTemplate "templates/hack.html" ctx =<< getResourceString
 
 Adding the hacks to a page is now just loading everything with version
