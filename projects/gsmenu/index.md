@@ -43,7 +43,7 @@ something like the following:
 
 
 [dmenu]: http://tools.suckless.org/dmenu/
-[manpage]: manpage
+[manpage]: manpage.html
 [gitrepo]: http://github.com/Athas/gsmenu
 [hackage]: http://hackage.haskell.org/package/gsmenu
 [config.hs]: http://sigkill.dk/pub/code/gsmenu/GSMenu/Config.hs

@@ -6,7 +6,7 @@ title: gsmenu support for XMonad
 ===========================
 
 XMonadContrib has the `XMonad.Actions.GridSelect` module that served
-as the inspiration for [gsmenu](/programs/gsmenu).  As the latter has
+as the inspiration for [gsmenu](/projects/gsmenu/).  As the latter has
 more features, I created a module by the name of `GSMenuPick` that is
 (almost) API-compatible with `XMonad.Actions.GridSelect`, but uses
 gsmenu behind the covers.  It also has a few additional features, such

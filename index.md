@@ -36,7 +36,7 @@ involved as writer and (very poor) actor.
 [2]: /programs
 [3]: /config
 [4]: /hacks
-[5]: /blog
+[5]: /blog.html
 [6]: http://werc.cat-v.org/
 [7]: http://topdatamat.dk
 [sigkillsource]: http://github.com/Athas/sigkill.dk
