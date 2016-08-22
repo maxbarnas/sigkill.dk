@@ -378,14 +378,15 @@ Now we're ready to describe the entire site.
 > main :: IO ()
 > main = hakyllWith config $ do
 
-CSS files are compressed, data files and my public key are copied
-verbatim.
+CSS files are compressed, data files, my public key, and the
+`robots.txt` are copied verbatim.
 
 >   match "css/*" $ do
 >     route   idRoute
 >     compile compressCssCompiler
 >   match "files/**" static
 >   match "pubkey.asc" static
+>   match "robots.txt" static
 
 One of our primary objectives is the ability to write content for the
 site without having to modify this generator program.  Therefore, we
