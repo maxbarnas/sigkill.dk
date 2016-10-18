@@ -15,11 +15,11 @@ GPUs][futhark].
 
 On this site I present [programs I have written][2], my [configuration
 files][3], and [minor scripts][4] that may of some amusement to
-others.  I also used to [blog][5], although not any more.  I tend to
-create categories before content (curiously mirroring my interest in
-type theory), so parts of the site may seem skeletal.  Please excuse
-my pompous introductions for folders containing naught but a five-line
-shell script.
+others.  I also have a [blog][5], which I may update from time to
+time.  I tend to create categories before content (curiously mirroring
+my interest in type theory), so parts of the site may seem skeletal.
+Please excuse my pompous introductions for folders containing naught
+but a five-line shell script.
 
 For those curious about technical details, this site is statically
 generated via the nifty Hakyll framework, although it used to be
@@ -36,7 +36,7 @@ involved as writer and (very poor) actor.
 [2]: /programs
 [3]: /config
 [4]: /hacks
-[5]: /blog.html
+[5]: /blog
 [6]: http://werc.cat-v.org/
 [7]: http://topdatamat.dk
 [sigkillsource]: http://github.com/Athas/sigkill.dk

@@ -475,13 +475,15 @@ for every post; second, we must create an overview page.  A blog post
 is simply a Markdown file in the `"blog/"` subdirectory.  Note that
 this is not matched by `contentPages`.
 
->   let blogArticles = "blog/*-*-*-*.md"
+>   let blogArticles = "blog/*-*-*-*.md" .&&. hasNoVersion
 
 Each post post gives rise to a corresponding HTML file, which uses the
 post template.  The template expects a date field, whose value we
 extract from the file name.  Importantly, individual blog articles are
 *not* added to the menu - there would quickly be far too many.
 
+>   match blogArticles $ version "source" static
+>
 >   match blogArticles $ do
 >     route $ setExtension "html"
 >     compile $ do
