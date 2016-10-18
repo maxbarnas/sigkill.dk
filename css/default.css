@@ -219,6 +219,17 @@ pre {
   margin: 1em;
 }
 
+/* Blog styling */
+
+.posttitle {
+    margin-bottom: 0em;
+}
+
+.postmetadata {
+    margin-top:0em;
+    font-size:10pt;
+}
+
 /* # General util # */
 
 .left {

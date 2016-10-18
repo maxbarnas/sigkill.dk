@@ -7,6 +7,7 @@ repository](https://github.com/Athas/sigkill.dk) for the data files as
 well.  The most defining trait of the site is the tree menu at the
 top, which contains every content page on the site.  Apart from that,
 I also do a lot of small hacks to generate various bits of the site.
+There is also a simple blog system, with one file per post.
 
 > {-# LANGUAGE OverloadedStrings #-}
 > module Main(main) where
@@ -120,7 +121,7 @@ traversed from the root to the current page (as well as any children
 of the current page, if it is a directory).
 
 To begin, we define a function that given the current path, decomposes
-some another path into the part that should be visible.  For example:
+some other path into the part that should be visible.  For example:
 
     relevant "foo/bar/baz" "foo/bar/quux" = ["foo/","bar/","quux"]
     relevant "foo/bar/baz" "foo/bar/quux/" = ["foo/","bar/","quux/"]
@@ -364,6 +365,21 @@ page.
 >     constField "menu" menu <>
 >     constField "source" source
 
+Furthermore, blog entries need a `"date"` field, which is extracted
+from the file name of the post.
+
+> postContext :: Compiler (Context String)
+> postContext = do
+>   ctx <- contentContext
+>   return $ dateField "date" "%B %e, %Y" `mappend` ctx
+>
+> postCtx :: Context String
+> postCtx = mconcat
+>   [ modificationTimeField "mtime" "%U"
+>   , dateField "date" "%B %e, %Y"
+>   , defaultContext
+>   ]
+
 I extend the default Hakyll configuration with information on how to
 use `rsync` to copy the site contents to the server.
 
@@ -411,7 +427,7 @@ similar non-processable data.
 
 >   match contentData static
 
-Content pages will end up as HTML content, as need to be processed.
+Content pages will end up as HTML files.
 This is conceptually a simple process: they are added to list of pages
 contained in the menu, processed by a *content compiler*, which is
 `manCompiler` for manpages, `pandocCompiler` for all other files,
@@ -453,6 +469,68 @@ themselves are handled as content data (see above).
 
 >   match ("config/configs/**" .&&. nothidden) $ version "configs" $
 >     compile configCompiler
+
+For the blog, there are two main tasks: first, we must create a page
+for every post; second, we must create an overview page.  A blog post
+is simply a Markdown file in the `"blog/"` subdirectory.  Note that
+this is not matched by `contentPages`.
+
+>   let blogArticles = "blog/*-*-*-*.md"
+
+Each post post gives rise to a corresponding HTML file, which uses the
+post template.  The template expects a date field, whose value we
+extract from the file name.  Importantly, individual blog articles are
+*not* added to the menu - there would quickly be far too many.
+
+>   match blogArticles $ do
+>     route $ setExtension "html"
+>     compile $ do
+>       postCtx <- postContext
+>       pandocCompiler
+>         >>= loadAndApplyTemplate "templates/post.html"    postCtx
+>         >>= saveSnapshot "content"
+>         >>= loadAndApplyTemplate "templates/default.html" postCtx
+>         >>= relativizeUrls
+
+The posts list is created by a template.  The blog posts are sorted by
+date, with the date encoded into the filename of the blog entry.  The
+created page is `"blog/index.html"` rather than `"blog.html"` in order
+for blog entries to be considered children of the blog entry in the
+menu.
+
+>   create ["blog/index.html"] $ do
+>     addToMenu
+>     route idRoute
+>     compile $ do
+>       ctx <- contentContext
+>       posts <- recentFirst =<< loadAll blogArticles
+>       let ctx' = constField "title" "Blog" <>
+>                  listField "posts" postCtx (return posts) <>
+>                  ctx
+>       makeItem ""
+>           >>= loadAndApplyTemplate "templates/posts.html" ctx'
+>           >>= loadAndApplyTemplate "templates/default.html" ctx'
+>           >>= relativizeUrls
+
+As the final touch on the blog, we produce an Atom feed.  I have no
+particular reason for choosing Atom over the alternatives, except that
+it seems slightly more modern.  Hakyll seems to support most formats,
+so I can add more if I feel like it.
+
+>   create ["atom.xml"] $ do
+>     route idRoute
+>     compile $ do
+>       let feedCtx = postCtx `mappend` bodyField "description"
+>       posts <- fmap (take 10) . recentFirst =<<
+>                loadAllSnapshots blogArticles "content"
+>       let feedConfiguration = FeedConfiguration
+>             { feedTitle       = "Troels Henriksen's blog"
+>             , feedDescription = "What some hacker has written"
+>             , feedAuthorName  = "Troels Henriksen"
+>             , feedAuthorEmail = "athas@sigkill.dk"
+>             , feedRoot        = "http://sigkill.dk"
+>             }
+>       renderAtom feedConfiguration feedCtx posts
 
 Finally, HTML templates are, of course, handled by the default
 template compiler.
