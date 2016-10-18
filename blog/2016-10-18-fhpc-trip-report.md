@@ -88,7 +88,7 @@ this is not easy for me to admit!)
 The next presentation was by a fellow PhD student from
 [DIKU](http://diku.dk) - [Martin Dybdal](http://dybber.dk).  The work
 he presented ([*Low-level functional GPU programming for parallel
-algorithms*][http://dl.acm.org/citation.cfm?id=2975996]) was on a
+algorithms*](http://dl.acm.org/citation.cfm?id=2975996)) was on a
 language called FCL, which is derived from Obsidian, but which, unlike
 Obsidian, is not embedded in Haskell, but is instead a conventional
 separate language with a compiler that generates OpenCL kernels.  I
