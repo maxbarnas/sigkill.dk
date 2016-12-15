@@ -15,8 +15,8 @@ prime numbers, namely the set of *even* prime numbers.  No proofs are
 given, as I wish the reader to experience the joy of reproducing these
 fundamental truths himself.
 
-Do you know any other theorems on the even primes?  Feel free to send
-them to me, and I'll put them up there.
+Do you know any other theorems about the even primes?  Feel free to send
+them to me, and I'll put them up here.
 
 Finiteness
 ---
