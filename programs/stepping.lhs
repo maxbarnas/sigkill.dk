@@ -1,4 +1,4 @@
-Writing an Single-Stepping Interpreter With Monads
+Writing a Single-Stepping Interpreter with Monads
 ===
 
 One nice thing about Haskell monads - perhaps the nicest - is how they
