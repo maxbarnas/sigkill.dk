@@ -184,7 +184,7 @@ Before we give `getFunction` a definition, let's define `eval`.  We
 use `step` to create a stepping point before any S-expression is
 evaluated, followed by matching on the structure of the S-expression.
 
-> eval vt sexp = step ("evaluating " ++ show sexp) $
+> eval vt sexp = step ("Evaluating " ++ show sexp) $
 >   case sexp of
 
 The simplest case is a number, which evaluates to itself.
@@ -217,7 +217,7 @@ measure.
 >       operator' <- getFunction operator
 >       args <- getOperands rest
 >       args' <- mapM (eval vt) args
->       step ("applying " ++ operator ++ " to " ++ show (toSExp args')) $
+>       step ("Applying " ++ operator ++ " to " ++ show (toSExp args')) $
 >         operator' vt args'
 
 If none of the previous cases matched, then the S-expression must be
@@ -386,41 +386,41 @@ Then we can run our interpreter on it as such:
 
 ```
 $ runhaskell stepping.lhs double.lisp
-evaluating (apply (quote (lambda (square) (apply square (list 2)))) (list (quote (lambda (x) (* x x))))) (press Enter to continue)
+Evaluating (apply (quote (lambda (square) (apply square (list 2)))) (list (quote (lambda (x) (* x x))))) (press Enter to continue)
 
-evaluating (quote (lambda (square) (apply square (list 2)))) (press Enter to continue)
+Evaluating (quote (lambda (square) (apply square (list 2)))) (press Enter to continue)
 
-evaluating (list (quote (lambda (x) (* x x)))) (press Enter to continue)
+Evaluating (list (quote (lambda (x) (* x x)))) (press Enter to continue)
 
-evaluating (quote (lambda (x) (* x x))) (press Enter to continue)
+Evaluating (quote (lambda (x) (* x x))) (press Enter to continue)
 
-applying list to ((lambda (x) (* x x))) (press Enter to continue)
+Applying list to ((lambda (x) (* x x))) (press Enter to continue)
 
-applying apply to ((lambda (square) (apply square (list 2))) ((lambda (x) (* x x)))) (press Enter to continue)
+Applying apply to ((lambda (square) (apply square (list 2))) ((lambda (x) (* x x)))) (press Enter to continue)
 
 Calling lambda with parameters (square) bound to ((lambda (x) (* x x))) (press Enter to continue)
 
-evaluating (apply square (list 2)) (press Enter to continue)
+Evaluating (apply square (list 2)) (press Enter to continue)
 
-evaluating square (press Enter to continue)
+Evaluating square (press Enter to continue)
 
-evaluating (list 2) (press Enter to continue)
+Evaluating (list 2) (press Enter to continue)
 
-evaluating 2 (press Enter to continue)
+Evaluating 2 (press Enter to continue)
 
-applying list to (2) (press Enter to continue)
+Applying list to (2) (press Enter to continue)
 
-applying apply to ((lambda (x) (* x x)) (2)) (press Enter to continue)
+Applying apply to ((lambda (x) (* x x)) (2)) (press Enter to continue)
 
 Calling lambda with parameters (x) bound to (2) (press Enter to continue)
 
-evaluating (* x x) (press Enter to continue)
+Evaluating (* x x) (press Enter to continue)
 
-evaluating x (press Enter to continue)
+Evaluating x (press Enter to continue)
 
-evaluating x (press Enter to continue)
+Evaluating x (press Enter to continue)
 
-applying * to (2 2) (press Enter to continue)
+Applying * to (2 2) (press Enter to continue)
 
 Evaluation finished.  Result: 4
 ```
