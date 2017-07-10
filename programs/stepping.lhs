@@ -333,11 +333,11 @@ A Small Parser
 To tie it all together, we define a quick little Lisp parser.  Note
 that this one does not support the dotted-pair notation for conses.
 
-> token           :: ReadP a -> ReadP a
-> token p          = skipSpaces >> p
+> token :: ReadP a -> ReadP a
+> token p = skipSpaces >> p
 >
 > schar :: Char -> ReadP Char
-> schar            = token . char
+> schar = token . char
 >
 > numberOrSymbol :: ReadP SExp
 > numberOrSymbol = token $ do s <- munch1 $ \c -> not (isSpace c || c `elem` "()")
