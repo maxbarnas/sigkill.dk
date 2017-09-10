@@ -5,10 +5,10 @@ title: Me
 Personal details
 ==
 
-My name is Troels Henriksen, I'm a hacker from Denmark.  Computer
-science is my greatest passion, and I study it at home as well as at
-the [University of Copenhagen](http://diku.dk), where I work as a PhD
-student.
+My name is Troels Henriksen, I'm a hacker from Denmark.  Computing is
+my primary passion, and I study it at home as well as at the
+[University of Copenhagen](http://diku.dk), where I work as a
+postdoctoral researcher.
 
 My email address is <athas@sigkill.dk> and my public key is available
 [here](pubkey.asc).
@@ -33,4 +33,5 @@ the key to reliable engineering outside as well as inside the
 computing industry.  After much experimentation, I no longer think
 current shell scripting is appropriate for anything other than very
 simple glue, but perhaps a more effective language for program
-composition could be devised.
+composition could be devised.  I still have a strong interest in
+conceptual simplicity.
