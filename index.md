@@ -10,8 +10,8 @@ hacker ([more about me][1]) and general enthusiast in all matters
 computing.  I am presently working as a postdoctoral researcher at
 [DIKU][diku], the computing department at the University of
 Copenhagen, where I do research into optimising compilers for
-data-parallel language.  Concretely, I am working on [an optimising
-compiler targeting GPUs][futhark].
+data-parallel languages.  Concretely, I am working on [the Futhark
+language and compiler][futhark].
 
 On this site I present [programs I have written][2], my [configuration
 files][3], and [minor scripts][4] that may of some amusement to
