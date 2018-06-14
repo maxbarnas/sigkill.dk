@@ -3,7 +3,16 @@ title: TFP'18 Trip Report
 description: Trends in Functional Programming 2018 in Gothenburg and what I saw there.
 ---
 
-Gothenburg is one big hill.  Ugh.
+These are my notes from my first visit to [Trends in Functional
+Programming](http://www.cse.chalmers.se/~myreen/tfp2018/).  Overall I
+had a great time - the audience was friendly, and the talks more
+accessible than is usually the case at the larger conferences.  I
+suspect this is due to most of the presentations being given by fairly
+new researchers who are still themselves new to their subjects, rather
+than senior academics who are reporting the latest news in a
+decades-old research agenda.
+
+Also, Gothenburg is one big hill.  Ugh.
 
 Day One
 ==
