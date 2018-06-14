@@ -23,7 +23,7 @@ refactoring (renaming, function extraction, etc).  The speaker went
 over a lot of various quirks in Haskell, Erlang, and OCaml that make
 refactoring troublesome in these languages.  While there has been some
 progress in automatic refactoring for fixing bugs and such, he seemed
-quite skeptical about fully automated refactoring.  A human must be
+quite sceptical about fully automated refactoring.  A human must be
 kept in the loop.  This seems sensible, since much refactoring is
 about making the code more readable to a human.  He also believes that
 a refactoring tool need not be 100% automatic; as long as it can do
@@ -75,14 +75,14 @@ really familiar with the shift/reset mechanism.
 
 Next up was *Colocation of Potential Parallelism in a Distributed
 Adaptive Run-time System for Parallel Haskell*.  I'm generally
-skeptical of parallel Haskell because I find it difficult to use
+sceptical of parallel Haskell because I find it difficult to use
 efficiently and I see very few real-world applications in practice
 (concurrent Haskell, on the other hand, is a big success).  This
 presentation talked about a new work-stealing scheduler for
 distributed parallel Haskell that used a notion of "ancestry" to
-decide which sparks should be stolen by idle processers.  Essentially,
+decide which sparks should be stolen by idle processors.  Essentially,
 the runtime keeps track of how sparks are related by their call stack
-(simplifying a bit here), and processers that finish a spark will go
+(simplifying a bit here), and processors that finish a spark will go
 on to try to execute the most related one.  The hope is that this
 spark will already be close by.  The main weakness of the presentation
 was that the benchmarks did not contain any sparks that required large
@@ -204,12 +204,12 @@ I will definitely be keeping an eye on this one, to see where it goes.
 
 Next up was a position paper (well, talk): *Graph Reduction Hardware
 Revisited*.  The presenter argued that while graph reduction hardware
-was outcompeted by commodity hardware in the 80s, the death of
+was out-competed by commodity hardware in the 80s, the death of
 sequential speedups and (especially) the rise of FPGAs means we should
 reconsider this old idea.  There seems to be two ways of going about
 it: either compile a functional (core) language directly to a hardware
 description language, or compile it to a set of supercombinators
-(think SKI), an interpretor for which is then manually implemented on
+(think SKI), an interpreter for which is then manually implemented on
 an FPGA.  I think the latter is what the presenter was most
 enthusiastic about.  I am less enthusiastic about the idea as a whole;
 or rather I believe it is premature.  FPGAs are not some perfectly
@@ -241,7 +241,7 @@ The penultimate talk was *High-performance defunctionalization in
 Futhark*, given by the [DIKU](http://diku.dk) student Anders Kiel
 Hovgaard, who implemented higher-order functions for
 [Futhark](https://futhark-lang.org) for his masters project.  This was
-a very succesful project and Anders's work was very polished
+a very successful project and Anders's work was very polished
 (including both a robust implementation and a formal proof of
 correctness of the defunctionalisation algorithm).  The talk was good,
 too.
