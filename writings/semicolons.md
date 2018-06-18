@@ -44,6 +44,8 @@ The list
 
   * [Futhark](https://futhark-lang.org)
 
+  * [MoonScript](https://moonscript.org/)
+
   * [RPG II](https://en.wikipedia.org/wiki/IBM_RPG_II)
 
   * TeX (although some macro packages may define a special meaning for semicolon)
