@@ -63,6 +63,10 @@ used in practice.  Usually this is by some other mechanism that
     layout](https://en.wikibooks.org/wiki/Haskell/Indentation), which
     is a common style.
 
+  * Non-textual languages like [Scratch](https://scratch.mit.edu/) or
+    [Piet](http://www.dangermouse.net/esoteric/piet.html) naturally do
+    not make use of semicolons.
+
   * Transact-SQL (the SQL dialect used by SQL Server and Sybase)
     supports semicolons, but it is only used under [very rare
     circumstances](https://stackoverflow.com/questions/710683/when-should-i-use-semicolons-in-sql-server#710697).
