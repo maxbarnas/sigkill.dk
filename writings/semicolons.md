@@ -54,9 +54,6 @@ Some languages do syntactically use semicolons, but they are rarely
 used in practice.  Usually this is by some other mechanism that
 "automatically" inserts them during parsing.
 
-  * [Coq](https://coq.inria.fr/) does not use semicolons *per se*, but
-    in practice they are used in the proof tactics language.
-
   * [Go](https://golang.org/) uses automatic insertion, and it is a
     widespead style.  However, it is still used in other constructs,
     such as `for` loops.
