@@ -19,7 +19,9 @@ interpreter](https://baturin.org/docs/ocaml-faq/#heading_toc_j_1).
 
 While the most popular use of semicolons is in the context of
 statements, some languages use them for other purposes.  For example,
-F# and Matlab use semicolons for separating elements in collections.
+F# and Matlab use semicolons for separating elements in collections,
+and in Lisp they are used for comments.  Such uses still exclude them
+from the main list here.
 
 An interesting quesion is to ask *which languages do not use
 semicolons at all*?  This page is an attempt at a list, although it
@@ -31,11 +33,11 @@ Do you know of any languages I've missed?  Please write me.
 The list
 ---
 
-  * [APL](https://en.wikipedia.org/wiki/APL_(programming_language))
-
   * [BASIC](https://en.wikipedia.org/wiki/BASIC) (specific dialects may differ)
 
   * [Brainfuck](https://esolangs.org/wiki/Brainfuck)
+
+  * [COBOL](https://en.wikipedia.org/wiki/COBOL) (treats semicolon as whitespace)
 
   * [Elm](http://elm-lang.org/)
 
