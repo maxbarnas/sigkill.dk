@@ -28,6 +28,9 @@ very notable (like Brainfuck).
 
 Do you know of any languages I've missed?  Please write me.
 
+The list
+---
+
   * [APL](https://en.wikipedia.org/wiki/APL_(programming_language))
 
   * [BASIC](https://en.wikipedia.org/wiki/BASIC) (specific dialects may differ)
@@ -38,14 +41,15 @@ Do you know of any languages I've missed?  Please write me.
 
   * [Futhark](https://futhark-lang.org)
 
-  * [Python](https://www.python.org/)
-
 Honourable mentions
 ---
 
 Some languages do syntactically use semicolons, but they are rarely
 used in practice.  Usually this is by some other mechanism that
 "automatically" inserts them during parsing.
+
+  * [Coq](https://coq.inria.fr/) does not use semicolons *per se*, but
+    in practice they are used in the proof tactics language.
 
   * [Go](https://golang.org/) uses automatic insertion, and it is a
     widespead style.
@@ -55,9 +59,13 @@ used in practice.  Usually this is by some other mechanism that
     layout](https://en.wikibooks.org/wiki/Haskell/Indentation), which
     is a common style.
 
+  * Transact-SQL (the SQL dialect used by SQL server) supports
+    semicolons, but it is only used under [very rare
+    circumstances](https://stackoverflow.com/questions/710683/when-should-i-use-semicolons-in-sql-server#710697).
+
 Dishonourable mentions
 ---
 
   * [Javascript](https://en.wikipedia.org/wiki/JavaScript) supports
-    automatic semicolon insertion (like Go), but it is not universally
-    used.
+    automatic semicolon insertion (like Go), but its use is [somewhat
+    contentious](http://www.bradoncode.com/blog/2015/08/26/javascript-semi-colon-insertion/).
