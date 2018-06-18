@@ -43,7 +43,7 @@ The list
 
   * [Futhark](https://futhark-lang.org)
 
-  * TeX (although some macro packages may define semicolon their own uses)
+  * TeX (although some macro packages may define a special meaning for semicolon)
 
   * [Vimscript](http://vimdoc.sourceforge.net/htmldoc/usr_41.html)
 
