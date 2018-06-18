@@ -41,6 +41,10 @@ The list
 
   * [Futhark](https://futhark-lang.org)
 
+  * TeX (although some macro packages may define semicolon their own uses)
+
+  * [Vimscript](http://vimdoc.sourceforge.net/htmldoc/usr_41.html)
+
 Honourable mentions
 ---
 
@@ -52,15 +56,16 @@ used in practice.  Usually this is by some other mechanism that
     in practice they are used in the proof tactics language.
 
   * [Go](https://golang.org/) uses automatic insertion, and it is a
-    widespead style.
+    widespead style.  However, it is still used in other constructs,
+    such as `for` loops.
 
   * [Haskell](https://www.haskell.org/) avoids semicolons *only* when
     using exclusively [indentation-based
     layout](https://en.wikibooks.org/wiki/Haskell/Indentation), which
     is a common style.
 
-  * Transact-SQL (the SQL dialect used by SQL server) supports
-    semicolons, but it is only used under [very rare
+  * Transact-SQL (the SQL dialect used by SQL Server and Sybase)
+    supports semicolons, but it is only used under [very rare
     circumstances](https://stackoverflow.com/questions/710683/when-should-i-use-semicolons-in-sql-server#710697).
 
 Dishonourable mentions
