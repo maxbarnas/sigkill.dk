@@ -43,6 +43,8 @@ The list
 
   * [Futhark](https://futhark-lang.org)
 
+  * [RPG II](https://en.wikipedia.org/wiki/IBM_RPG_II)
+
   * TeX (although some macro packages may define a special meaning for semicolon)
 
   * [Vimscript](http://vimdoc.sourceforge.net/htmldoc/usr_41.html)
@@ -66,6 +68,11 @@ used in practice.  Usually this is by some other mechanism that
   * Non-textual languages like [Scratch](https://scratch.mit.edu/) or
     [Piet](http://www.dangermouse.net/esoteric/piet.html) naturally do
     not make use of semicolons.
+
+  * [Prolog](http://www.swi-prolog.org/pldoc/man?section=operators)
+    predefines a semicolon infix operator in the standard environment
+    (for disjunction), but it is not assigned special status by the
+    syntax of the language.
 
   * Transact-SQL (the SQL dialect used by SQL Server and Sybase)
     supports semicolons, but it is only used under [very rare
