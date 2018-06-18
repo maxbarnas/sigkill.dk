@@ -9,12 +9,19 @@ Semicolons are prevalent in most programming languages.  Most are
 familiar with them through their use as statement terminators in
 C-derived languages, but their pedigree is even older than that.
 ALGOL used them as statement separators, as do most of its
-descendants.  OCaml, which comes from an entirely different branch of
-language evolution, even considers the double-semicolon (`;;`) to be a
-distinct token, although [it only has meaning in the
+descendants.  In fact, the 70s bore witness to quite a battle between
+proponents of semicolon-as-separators against those who believed in
+semicolons-as-terminators.  OCaml, which comes from an entirely
+different branch of language evolution, even considers the
+double-semicolon (`;;`) to be a distinct token, although [it only has
+meaning in the
 interpreter](https://baturin.org/docs/ocaml-faq/#heading_toc_j_1).
 
-In fact, an interesting quesion is to ask *which languages do not use
+While the most popular use of semicolons is in the context of
+statements, some languages use them for other purposes.  For example,
+F# and Matlab use semicolons for separating elements in collections.
+
+An interesting quesion is to ask *which languages do not use
 semicolons at all*?  This page is an attempt at a list, although it
 elides [esoteric languages](https://esolangs.org/), unless they are
 very notable (like Brainfuck).
