@@ -20,13 +20,12 @@ interpreter](https://baturin.org/docs/ocaml-faq/#heading_toc_j_1).
 While the most popular use of semicolons is in the context of
 statements, some languages use them for other purposes.  For example,
 F# and Matlab use semicolons for separating elements in collections,
-and in Lisp they are used for comments.  Such uses still exclude them
-from the main list here.
+and in Lisp they are used for comments.
 
-An interesting quesion is to ask *which languages do not use
-semicolons at all*?  This page is an attempt at a list, although it
-elides [esoteric languages](https://esolangs.org/), unless they are
-very notable (like Brainfuck).
+An interesting quesion is *which languages do not use semicolons at
+all*?  This page is an attempt at a list, although it elides [esoteric
+languages](https://esolangs.org/), unless they are very notable (like
+Brainfuck).
 
 Do you know of any languages I've missed?  Please write me.
 
