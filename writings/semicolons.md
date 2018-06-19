@@ -46,6 +46,8 @@ The list
 
   * [MoonScript](https://moonscript.org/)
 
+  * [Plasma](https://plasmalang.org/)
+
   * [RPG II](https://en.wikipedia.org/wiki/IBM_RPG_II)
 
   * TeX (although some macro packages may define a special meaning for semicolon)
