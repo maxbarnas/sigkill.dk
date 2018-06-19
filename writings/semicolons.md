@@ -65,10 +65,6 @@ used in practice.  Usually this is by some other mechanism that
     widespead style.  However, it is still used in other constructs,
     such as `for` loops.
 
-  * [Scala](https://www.scala-lang.org/) uses automatic insertion at
-    linebreaks, but it is not uncommon to put multiple
-    semicolon-separated statements on a single line.
-
   * [Haskell](https://www.haskell.org/) avoids semicolons *only* when
     using exclusively [indentation-based
     layout](https://en.wikibooks.org/wiki/Haskell/Indentation), which
@@ -82,6 +78,10 @@ used in practice.  Usually this is by some other mechanism that
     predefines a semicolon infix operator in the standard environment
     (for disjunction), but it is not assigned special status by the
     syntax of the language.
+
+  * [Scala](https://www.scala-lang.org/) uses automatic insertion at
+    linebreaks, but it is not uncommon to put multiple
+    semicolon-separated statements on a single line.
 
   * Transact-SQL (the SQL dialect used by SQL Server and Sybase)
     supports semicolons, but it is only used under [very rare
