@@ -32,7 +32,7 @@ Do you know of any languages I've missed?  Please write me.
 The list
 ---
 
-  * [BASIC](https://en.wikipedia.org/wiki/BASIC) (specific dialects may differ)
+  * [BASIC](https://en.wikipedia.org/wiki/BASIC) ([specific dialects may differ](https://www.ecma-international.org/publications/files/ECMA-ST-WITHDRAWN/ECMA-55,%201st%20Edition,%20January%201978.pdf))
 
   * [Brainfuck](https://esolangs.org/wiki/Brainfuck)
 
