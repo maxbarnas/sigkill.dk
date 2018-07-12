@@ -22,10 +22,10 @@ statements, some languages use them for other purposes.  For example,
 F# and Matlab use semicolons for separating elements in collections,
 and in Lisp they are used for comments.
 
-An interesting quesion is *which languages do not use semicolons at
-all*?  This page is an attempt at a list, although it elides [esoteric
-languages](https://esolangs.org/), unless they are very notable (like
-Brainfuck).
+Clearly semicolons are widespread, but *which languages do not use
+semicolons at all*?  This page is an attempt at a list, although it
+elides [esoteric languages](https://esolangs.org/), unless they are
+very notable (like Brainfuck).
 
 Do you know of any languages I've missed?  Please write me.
 
