@@ -110,6 +110,9 @@ and configuration knobs, so I sympathise with this approach.
 
 Of course, the main problem with Homebrew is that I don't much like
 the operating system on which it runs.  But perhaps even Linux has
-room for an more approachable package manager for non-system
-applications.  I will certainly have to take a look at
+room for an approachable non-distribution-specific package manager for
+non-system applications.  I will certainly have to take a look at
 [Linuxbrew](http://linuxbrew.sh/).
+
+Note: I had originally wanted to title this post *Homebrew is the only
+good thing about macOS*, but that felt a bit too provocative.
