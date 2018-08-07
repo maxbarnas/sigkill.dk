@@ -8,11 +8,8 @@ Opinionated Hakyll Tutorial
 This guide (which is also a Literate Haskell program) describes basic
 Hakyll metaphors in a way that I would have found useful when first
 learning Hakyll, using a working example site to illustrate the
-concepts.  The mechanism described in this article are not necessarily
-the literal implementation Hakyll, but are rather a glimpse of the
-metaphors that I have found useful in practise when working with it.
-Also, it should probably be noted that I was using Hakyll 4.6.8.1 and
-GHC 7.8.1 when writing this article.
+concepts.  I was using Hakyll 4.6.8.1 and GHC 7.8.1 when writing this
+article.
 
 Introduction
 ---
