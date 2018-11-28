@@ -10,7 +10,7 @@ familiar with them through their use as statement terminators in
 C-derived languages, but their pedigree is even older than that.
 ALGOL used them as statement separators, as do most of its
 descendants.  In fact, the 70s bore witness to quite a battle between
-proponents of semicolon-as-separators against those who believed in
+proponents of semicolons-as-separators against those who believed in
 semicolons-as-terminators.  OCaml, which comes from an entirely
 different branch of language evolution, even considers the
 double-semicolon (`;;`) to be a distinct token, although [it only has
@@ -27,7 +27,7 @@ semicolons at all*?  This page is an attempt at a list, although it
 elides [esoteric languages](https://esolangs.org/), unless they are
 very notable (like Brainfuck).
 
-Do you know of any languages I've missed?  Please write me.
+Do you know of any languages I've missed?  Send an email!
 
 The list
 ---
