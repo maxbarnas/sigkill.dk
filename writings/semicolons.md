@@ -70,7 +70,7 @@ used in practice.  Usually this is by some other mechanism that
   * [Haskell](https://www.haskell.org/) avoids semicolons *only* when
     using exclusively [indentation-based
     layout](https://en.wikibooks.org/wiki/Haskell/Indentation), which
-    is a common style.
+    is a common style.  [Python](https://python.org) is a similar case.
 
   * Non-textual languages like [Scratch](https://scratch.mit.edu/) or
     [Piet](http://www.dangermouse.net/esoteric/piet.html) naturally do
