@@ -53,6 +53,8 @@ The list
 
   * [COBOL](https://en.wikipedia.org/wiki/COBOL)
 
+  * Datalog
+
   * [FORTRAN](http://www.math-cs.gordon.edu/courses/cs323/FORTRAN/fortran.html)
 
   * Lisp (specific dialects may differ)
