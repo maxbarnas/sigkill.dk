@@ -55,11 +55,17 @@ The list
 
   * Datalog
 
+  * [ELAN](../files/Elan_1.7.pdf)
+
   * [FORTRAN](http://www.math-cs.gordon.edu/courses/cs323/FORTRAN/fortran.html)
 
   * [IMP 77](https://web.archive.org/web/20050529121643/http://imp.nb-info.co.uk/imp77.pdf)
 
+  * [Jam](../files/Jam_1.1.pdf)
+
   * Lisp (specific dialects may differ)
+
+  * [Lucid](https://en.wikipedia.org/wiki/Lucid_(programming_language))
 
   * Pascal (recent versions use curly braces for comments, but these
     were written with `(*` and `*)` in ancient times, likely because
