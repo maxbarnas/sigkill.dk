@@ -27,6 +27,9 @@ semicolons at all*?  This page is an attempt at a list, although it
 elides [esoteric languages](https://esolangs.org/), unless they are
 very notable (like Brainfuck).
 
+See also the [list of programming languages that do not use curly
+braces](braces.html).
+
 Do you know of any languages I've missed?  Send an email!
 
 The list
