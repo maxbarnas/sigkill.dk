@@ -57,6 +57,8 @@ The list
 
   * [FORTRAN](http://www.math-cs.gordon.edu/courses/cs323/FORTRAN/fortran.html)
 
+  * [IMP 77](https://web.archive.org/web/20050529121643/http://imp.nb-info.co.uk/imp77.pdf)
+
   * Lisp (specific dialects may differ)
 
   * Pascal (recent versions use curly braces for comments, but these
