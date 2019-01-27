@@ -65,6 +65,8 @@ The list
 
   * PL/I
 
+  * [Rapira](https://en.wikipedia.org/wiki/Rapira)
+
   * [Rexx](https://en.wikipedia.org/wiki/Rexx)
 
   * [RPG](https://en.wikipedia.org/wiki/IBM_RPG)
