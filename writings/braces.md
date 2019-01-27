@@ -36,8 +36,7 @@ survived).  The following should at least be complete for the
 languages of the [TIOBE Top 50](https://www.tiobe.com/tiobe-index/).
 
 Overall, my impression is that while very few languages do not use
-semicolons, there are many more languages that do not use curly
-braces.
+semicolons, there are many languages that do not use curly braces.
 
 The list
 ---
@@ -68,6 +67,8 @@ The list
 
   * Smalltalk (some newer dialects have a notation for "dynamic
     arrays" that uses curly braces)
+
+  * [SNOBOL](https://en.wikipedia.org/wiki/SNOBOL)
 
   * SQL
 
