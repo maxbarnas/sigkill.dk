@@ -63,6 +63,8 @@ The list
 
   * PL/I
 
+  * [Rexx](https://en.wikipedia.org/wiki/Rexx)
+
   * [RPG](https://en.wikipedia.org/wiki/IBM_RPG)
 
   * Smalltalk (some newer dialects have a notation for "dynamic
