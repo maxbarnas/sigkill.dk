@@ -33,7 +33,7 @@ only include notable (or recent, or interesting) ones.  I also do not
 intend to include languages written for machines where curly braces
 did not exist, unless particularly notable (such as by having actually
 survived).  The following should at least be complete for the
-languages of the [TIOBE Top 50](https://www.tiobe.com/tiobe-index/).
+languages on the [TIOBE Top 50](https://www.tiobe.com/tiobe-index/).
 
 Overall, my impression is that while very few languages do not use
 semicolons, there are many languages that do not use curly braces.
