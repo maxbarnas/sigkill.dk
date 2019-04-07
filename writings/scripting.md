@@ -58,7 +58,7 @@ order to embed it within a regular expression.  You might eye `fgrep
 some way, that's still not good enough.  My preference so far is to
 bite the bullet and the biggest hammer in the toolbox:
 
-    awk 'index($0,STR)!=-1 { /* do whatever */ }' 'STR=any string that you can dream of'
+    awk 'index($0,STR)!=0 { /* do whatever */ }' 'STR=any string that you can dream of'
 
 This exploits a slightly obscure Awk facility for defining variables
 (in this case, `STR`) from the command line.
