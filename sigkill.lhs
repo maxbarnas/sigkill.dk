@@ -26,6 +26,8 @@ There is also a simple blog system, with one file per post.
 > import qualified Text.Blaze.Html5 as H
 > import qualified Text.Blaze.Html5.Attributes as A
 > import Text.Blaze.Html.Renderer.String (renderHtml)
+> import           Text.Pandoc
+> import           Text.Pandoc.Walk
 
 > import Hakyll
 
@@ -427,21 +429,22 @@ similar non-processable data.
 
 >   match contentData static
 
-Content pages will end up as HTML files.
-This is conceptually a simple process: they are added to list of pages
-contained in the menu, processed by a *content compiler*, which is
-`manCompiler` for manpages, `pandocCompiler` for all other files,
-although everything gets instantiated with the same template in the
-end.  Some pages also need special generated content: the hacks-page
-needs a list of hacks, and the config-page needs a list of
-configuration files.  These are special-cased in an intermediate step.
+Content pages will end up as HTML files.  This is conceptually a
+simple process: they are added to list of pages contained in the
+menu, processed by a *content compiler*, which is `manCompiler` for
+manpages, and `contentCompiler` (which we will see later) for all
+other files, although everything gets instantiated with the same
+template in the end.  Some pages also need special generated
+content: the hacks-page needs a list of hacks, and the config-page
+needs a list of configuration files.  These are special-cased in an
+intermediate step.
 
 >   match contentPages $ do
 >     addToMenu
 >     route $ setExtension "html"
 >     compile $ do
 >       context <- contentContext
->       createByPattern pandocCompiler [("**.man", manCompiler)]
+>       createByPattern contentCompiler [("**.man", manCompiler)]
 >         >>= modifyByPattern return [("hacks/index.md", addHacks),
 >                                     ("config/index.md", addConfigs)]
 >         >>= loadAndApplyTemplate "templates/default.html" context
@@ -488,7 +491,7 @@ extract from the file name.  Importantly, individual blog articles are
 >     route $ setExtension "html"
 >     compile $ do
 >       postCtx <- postContext
->       pandocCompiler
+>       contentCompiler
 >         >>= loadAndApplyTemplate "templates/post.html"    postCtx
 >         >>= saveSnapshot "content"
 >         >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -545,6 +548,27 @@ position.
 
 > static :: Rules ()
 > static = route idRoute >> compile copyFileCompiler >> return ()
+
+Compiling content pages is done with the default
+`pandocCompiler`, but we extend it slightly with a transformation
+that makes every headline link to itself.  First, we define the
+function that transforms a `Header` block into a `Header` block with
+a self-link.
+
+> selfLinkHeader :: Block -> Block
+> selfLinkHeader (Header n (ident, classes, kvs) b) =
+>   Header n (ident, classes, kvs) [b']
+>   where b' = Link (ident <> "-link", ["titlelink"], []) b ('#' : ident, ident)
+> selfLinkHeader x = x
+
+Then we can define our `contentCompiler` as a `pandocCompiler` with an
+additional transformation step.
+
+> contentCompiler :: Compiler (Item String)
+> contentCompiler = pandocCompilerWithTransform
+>                   defaultHakyllReaderOptions
+>                   defaultHakyllWriterOptions $
+>                   walk selfLinkHeader
 
 Compiling man pages is done using the system `groff` program.  The
 output from `groff` will contain control characters (notably
