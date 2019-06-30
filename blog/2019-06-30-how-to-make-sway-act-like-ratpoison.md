@@ -16,8 +16,8 @@ to Wayland ([X11 is soon becoming
 retrocomputing](https://www.phoronix.com/scan.php?page=news_item&px=X.Org-Maintenance-Mode-Quickly)),
 which leaves sway as the only option.  However, I have no prior love
 of i3, and I found the default key shortcuts bad.  Specifically, sway
-assumes that it can be granted an entire modifier key (Alt by default)
-for key shortcuts.  As an example example, `Alt-f` makes a window full
+assumes that it can be granted an entire modifier key (say, Alt)
+for key shortcuts.  As an example, `Alt-f` makes a window full
 screen.  A window manager making such assumptions is intolerable in
 the presence of software like [GNU
 Emacs](https://www.gnu.org/software/emacs/), which needs all the
