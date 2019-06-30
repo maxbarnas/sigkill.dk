@@ -46,7 +46,7 @@ multi-chord keybindings.  Fortunately, sway does have a notion of
 only mode is for resizing windows.  With some cleverness, we can use
 these modes to emulate a prefix key.  We will bind `Ctrl-t` to a
 command that switches to the prefix mode, where we then bind the
-actual keys that we care about.  However, there is a wrinkle: in Sway,
+actual keys that we care about.  However, there is a wrinkle: in sway,
 once you are in a mode, you *stay* in that mode.  This not what we
 want: after starting a terminal with `Ctrl-t c`, we don't want every
 subsequent `c` to start a new terminal!  Fortunately, we can bind `c`
@@ -76,7 +76,7 @@ prefix mode and hit a key not associated with a command, that key will
 be passed to the focused window, and you will stay in prefix mode.
 Ratpoison would beep at you and exit prefix mode (although it's
 strictly not a mode in Ratpoison).  There is no simple way to capture
-this behaviour in Sway, since you cannot define a "default binding"
+this behaviour in sway, since you cannot define a "default binding"
 that would exit the mode.
 
 Still, if you are like me, and consider the early/mid-2000s to be the
