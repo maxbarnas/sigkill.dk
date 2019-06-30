@@ -75,7 +75,7 @@ The main difference compared to ratpoison is that if you are in the
 prefix mode and hit a key not associated with a command, that key will
 be passed to the focused window, and you will stay in prefix mode.
 Ratpoison would beep at you and exit prefix mode (although it's
-strictly not a mode in Ratpoison).  There is no simple way to capture
+strictly not a mode in ratpoison).  There is no simple way to capture
 this behaviour in sway, since you cannot define a "default binding"
 that would exit the mode.
 
