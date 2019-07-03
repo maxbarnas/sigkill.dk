@@ -1,5 +1,5 @@
 ---
-title: Front page
+title: Troels Henriksen's website
 ---
 
 Troels Henriksen's website
