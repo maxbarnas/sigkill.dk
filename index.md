@@ -32,7 +32,7 @@ of inspired by Top Gear, that we film in the basement under the
 department of computer science at the University of Copenhagen.  I'm
 involved as writer and (very poor) actor.
 
-[1]: /me.html
+[1]: /me
 [2]: /programs
 [3]: /config
 [4]: /hacks
