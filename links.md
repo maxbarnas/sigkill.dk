@@ -20,8 +20,8 @@ checking out.
 
 * [Drew DeVault](https://drewdevault.com/) is the hacker behind things
   like [sway](https://swaywm.org/) (an i3 clone for Wayland),
-  [sourcehut](https://sr.ht), and more (a source code and CI hosting
-  site).  I really like his style of program design and his blog is
+  [sourcehut](https://sr.ht) (a source code and CI hosting site), and
+  more.  I really like his style of program design and his blog is
   very interesting.
 
 * [John Regehr](https://www.cs.utah.edu/~regehr/) is a professor at
