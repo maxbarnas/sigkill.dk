@@ -13,6 +13,18 @@ used to me (most just rank Twitter it seems), but there are still some
 cool ones around.  Here's a list of the ones I think are worth
 checking out.
 
+* [Bitreich](http://bitreich.org/) is a radical splinter group from
+  [suckless.org](http://suckless.org/).  They focus on simple software
+  and incomprehensible organisational politics (that I am pretty sure
+  are at least partly a parody).  If you followed the link, you'll
+  have discovered that the proper Bitreich website is not actually
+  accessible over HTTP - instead, you are directed to use Gopher.  I
+  advice using the venerable text mode Gopher client (and browser)
+  [lynx](https://lynx.browser.org/) to explore Gopherspace, with
+  Bitreich as the starting point.  It's a surprisingly pleasant retro
+  experience, and feels a lot more personal and decentralised than the
+  modern web.
+
 * [Dan Luu](https://danluu.com/) is a programmer and writes
   interesting and very well-researched articles.  [The one on computer
   input lag](https://danluu.com/input-lag/) is particularly worth
