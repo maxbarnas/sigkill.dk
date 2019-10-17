@@ -1,9 +1,14 @@
 body {
-  background-color: #eee;
-  font-family: sans-serif;
-  margin: auto;
-  max-width:50em;
-  line-height: 1.4;
+    background-color: #eee;
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 65em;
+    overflow-y: scroll;
+    line-height: 1.4;
 }
 
 body > * {
