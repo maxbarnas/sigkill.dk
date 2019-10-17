@@ -12,4 +12,4 @@ ghc-options:
   hakyll: -threaded
 
 nix:
-    packages: [zlib.dev, zlib.out, pkgconfig, openssl, rsync, openssh]
+    packages: [zlib.dev, zlib.out, pkgconfig, openssl, rsync, openssh, groff, utillinux]
