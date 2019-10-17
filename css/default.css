@@ -5,10 +5,15 @@ body {
     margin: 0px;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
     max-width: 65em;
     overflow-y: scroll;
     line-height: 1.4;
+}
+
+#content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body > * {
