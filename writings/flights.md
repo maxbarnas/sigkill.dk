@@ -24,13 +24,13 @@ but I'm just listing the idealised flight distance.
 2011 (1530km)
 -------------
 
-* **Copenhagen** to *Bruxelles** and back (2x 765km) to attend [FOSDEM
+* **Copenhagen** to **Bruxelles** and back (2x 765km) to attend [FOSDEM
   2011](https://archive.fosdem.org/2011/).
 
 2012 (1530km)
 -------------
 
-* **Copenhagen** to *Bruxelles** and back (2x 765km) to attend [FOSDEM
+* **Copenhagen** to **Bruxelles** and back (2x 765km) to attend [FOSDEM
   2012](https://archive.fosdem.org/2012/).
 
 2013 (11776km)
@@ -58,7 +58,7 @@ but I'm just listing the idealised flight distance.
 2015 (1530km)
 -------------
 
-* **Copenhagen** to *Bruxelles** and back (2x 765km) to attend [FOSDEM
+* **Copenhagen** to **Bruxelles** and back (2x 765km) to attend [FOSDEM
   2015](https://archive.fosdem.org/2015/).
 
 2016 (35214km)
