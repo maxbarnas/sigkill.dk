@@ -9,7 +9,7 @@ In the early days in the web, before search engines and centralised
 link repositories (think [Reddit](https://reddit.com)) took over
 everything, every personal web page would have links to the personal
 pages of other people.  Personal web pages are nothing like what they
-used to me (most just rank Twitter it seems), but there are still some
+used to be (most just use Twitter it seems), but there are still some
 cool ones around.  Here's a list of the ones I think are worth
 checking out.
 
@@ -44,3 +44,9 @@ checking out.
 * [Niels G. W. Serup](http://metanohi.name/) is one of my friends and
   he writes about important matters such as [why you should insert two
   spaces after a period](http://metanohi.name/two-spaces).
+
+* [Ted Unangst](https://flak.tedunangst.com) is one of the motley crew
+  making up the developers of [the best operating
+  system](https://openbsd.org).  He writes about when he is upset at
+  the computer (most of the time) and when he is happy with the
+  computer (less often).
