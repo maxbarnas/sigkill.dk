@@ -61,7 +61,7 @@ but I'm just listing the idealised flight distance.
 * **Copenhagen** to **Bruxelles** and back (2x 765km) to attend [FOSDEM
   2015](https://archive.fosdem.org/2015/).
 
-2016 (35214km)
+2016 (53654km)
 --------------
 
 * **Copenhagen** to **Los Angeles** and back (2x 9005km) to attend [PLDI
@@ -69,6 +69,9 @@ but I'm just listing the idealised flight distance.
 
 * **Copenhagen** to **Osaka** and back (2x 8602km) to attend [ICFP
   2016](https://conf.researchr.org/home/icfp-2016).
+
+* **Copenhagen** to **Johannesburg** and back (2x 9220km) for a family
+  vacation.
 
 2017 (9050km)
 -------------
@@ -101,3 +104,11 @@ but I'm just listing the idealised flight distance.
   people](http://www.lift-project.org/).
 
 * **Copenhagen** to **Geneva** and back (2x 1140km) to give a talk.
+
+2020 (1244km)
+--------------
+
+* **Copenhagen** to **Amsterdam** and back (2x 622km) to attend [NL-FP
+  Day 2020](https://sites.google.com/view/nl-fp-day-2020/home).  I
+  really wanted to take the train for this one, but I could not find a
+  reasonable way.
