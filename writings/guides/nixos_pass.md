@@ -2,6 +2,9 @@
 title: Using `pass` on NixOS
 ---
 
+Using `pass` on NixOS
+=====================
+
 On NixOS, you may find that `pass`, the [standard unix password
 manager](https://www.passwordstore.org/) fails with a cryptic error
 when it tries to decrypt passwords:
