@@ -38,9 +38,9 @@ to be found* (incidentally, who decided it was a good idea for the
 dynamic linker to report the error like that?  Grumble.)
 
 So how does this happen?  Well, to cut down on build times, our CI
-uses caching.  Specifically, it cases the `~/.cabal/packages` and
+uses caching.  Specifically, it caches the `~/.cabal/packages` and
 `~/.cabal/store` directories.  This means that the `happy` binary we
-use is one that was built during a previous CI run.  *However*,
+use is likely one that was built during a previous CI run.  *However*,
 because we run `cabal` under Nix, that `happy` binary will be
 dynamically linked against libraries in the Nix store (located under
 `/nix`), which we do *not* cache, because they are normally fetched or
