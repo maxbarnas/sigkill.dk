@@ -25,8 +25,8 @@ to run the tests.  Yet sometimes `cabal test` would fail with a
 mysterious error:
 
 ```
-/home/runner/.cabal/store/ghc-8.10.1/happy-1.19.12-77f44f4e1b397ecd8847f7694a29d33efa016984155f1eb70f21d8ed5fbf3069/bin/happy: createProcess:
-runInteractiveProcess: exec: does not exist (No such file or directory)
+/home/runner/.cabal/store/ghc-8.10.1/happy-1.19.12-77f44f4e1b397ecd8847f7694a29d33efa016984155f1eb70f21d8ed5fbf3069/bin/happy:
+createProcess: runInteractiveProcess: exec: does not exist (No such file or directory)
 ```
 
 [`happy`](https://www.haskell.org/happy/) is a parser generator that
