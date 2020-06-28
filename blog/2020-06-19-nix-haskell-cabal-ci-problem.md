@@ -54,3 +54,8 @@ How did we fix this?  Not elegantly, I'm afraid: we moved `cabal test`
 to another job, specifically one builds without Nix, instead using
 normal Debian packages.  I'd be quite curious to see if anyone has a
 nice solution to this problem.
+
+**Update:** Philip came up with a [better
+solution](https://github.com/diku-dk/futhark/commit/bb20259fb52765f0bfa22aae8cecdbb42e51b6da)
+that pins the Nixpkgs revision, and ties the `cabal` cache to the
+specific revision.
