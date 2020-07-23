@@ -11,7 +11,7 @@ my primary passion, and I study it at home as well as at the
 postdoctoral researcher.
 
 My email address is <athas@sigkill.dk> and my public key is available
-[here](pubkey.asc).
+[here](/pubkey.asc).
 
 While I do have non-computer interests, this is the Internet, so I
 won't get into those.  My computer interests are:
