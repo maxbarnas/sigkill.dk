@@ -367,6 +367,7 @@ CSS files are compressed, data files, my public key, and the
 >     compile compressCssCompiler
 >   match "files/**" static
 >   match "pubkey.asc" static
+>   match "id_rsa.pub" static
 >   match "robots.txt" static
 
 One of our primary objectives is the ability to write content for the
