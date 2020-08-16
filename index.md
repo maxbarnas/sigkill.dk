@@ -5,7 +5,7 @@ title: Troels Henriksen's website
 Troels Henriksen's website
 ================================
 
-[athas@sigkill.dk](mailto:athas@sigkill.dk)
+[athas@sigkill.dk](mailto:athas@sigkill.dk) [gpg](/pubkey.asc) [ssh](/id_rsa.pub)
 
 Welcome to my website.  My name is Troels Henriksen, and I am a Danish
 hacker ([more about me][1]) and general enthusiast in all matters
