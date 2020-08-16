@@ -284,6 +284,13 @@ Adding the hacks to a page is now just loading everything with version
 >   return item { itemBody = itemBody item <> renderHtml (H.ul $ mapM_ asLi hacks) }
 >   where asLi = H.li . preEscapedString . itemBody
 
+Extracting update times
+---
+
+> getUpdateTime :: FilePath -> Compiler String
+> getUpdateTime f =
+>   unixFilter "git" ["log", "-1", "--format=%ad", "--", f] ""
+
 Putting it all together
 ---
 
@@ -316,10 +323,12 @@ page.
 > contentContext = do
 >   menu <- getMenu
 >   source <- getResourceFilePath
+>   updated <- getUpdateTime source
 >   return $
 >     defaultContext <>
 >     constField "menu" menu <>
->     constField "source" source
+>     constField "source" source <>
+>     constField "updated" updated
 
 Furthermore, blog entries need a `"date"` field, which is extracted
 from the file name of the post.

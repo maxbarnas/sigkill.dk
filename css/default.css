@@ -133,17 +133,10 @@ h2 {
   font-family: monospace;
 }
 
-#dates {
+#updatedDate {
     color: #eee;
     text-align: right;
-    float: right;
     font-style: italic;
-}
-
-#publishedDate {
-}
-
-#updatedDate {
     margin-left: 1em;
     margin-right: 1em;
 }
