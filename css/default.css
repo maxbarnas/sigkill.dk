@@ -36,7 +36,6 @@ h2 {
   border-bottom: 1px solid #aaa;
   margin: 0;
   margin-bottom: 2%;
-  font-variant: small-caps;
   line-height: 170%;
 }
 
@@ -136,7 +135,6 @@ h2 {
 #updatedDate {
     color: #eee;
     text-align: right;
-    font-style: italic;
     margin-left: 1em;
     margin-right: 1em;
 }
