@@ -512,7 +512,7 @@ a self-link.
 > selfLinkHeader :: Block -> Block
 > selfLinkHeader (Header n (ident, classes, kvs) b) =
 >   Header n (ident, classes, kvs) [b']
->   where b' = Link (ident <> "-link", ["titlelink"], []) b ('#' : ident, ident)
+>   where b' = Link (ident <> "-link", ["titlelink"], []) b ("#" <> ident, ident)
 > selfLinkHeader x = x
 
 Then we can define our `contentCompiler` as a `pandocCompiler` with an
