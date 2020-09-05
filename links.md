@@ -13,6 +13,10 @@ used to be (most just use Twitter it seems), but there are still some
 cool ones around.  Here's a list of the ones I think are worth
 checking out.
 
+* [Anders Damsgaard](https://adamsgaard.dk/)'s website has a cool
+  retro look (at least of this writing), and interesting information
+  about his Unix-ish approach to writing scientific code.
+
 * [Bitreich](http://bitreich.org/) is a radical splinter group from
   [suckless.org](http://suckless.org/).  They focus on simple software
   and incomprehensible organisational politics (that I am pretty sure
