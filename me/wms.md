@@ -27,16 +27,16 @@ time.
 After that I went a bit back and forth (I distinctly remember trying
 to learn Qt programming in April of 2004), but eventually switched to
 the tiling window manager
-[Ion](https://en.wikipedia.org/wiki/Ion_(window_manager)) window
-manager (this was before the [author became grumpy and abandoned
+[Ion](https://en.wikipedia.org/wiki/Ion_(window_manager)) (this was
+before the [author became grumpy and abandoned
 it](https://lists.freebsd.org/pipermail/freebsd-ports/2007-December/045494.html).
 I don't remember exactly why, but I was probably chasing obscure
 software to establish hacker street cred.  I never liked its model
 much though, and eventually found
 [ratpoison](https://www.nongnu.org/ratpoison/), a window manager
 inspired by [GNU Screen](https://www.gnu.org/software/screen/).  It
-felt much less magical and predictable than Ion, and I used that for a
-great many years.  Since I was a [smug Lisp
+felt much less magical and unpredictable than Ion, and I used that for
+a great many years.  Since I was a [smug Lisp
 weenie](http://wiki.c2.com/?SmugLispWeenie) in those years, I also
 tried out [StumpWM](https://stumpwm.github.io/) - a ratpoison
 successor written in Common Lisp - but I had some early problems with
@@ -48,9 +48,9 @@ manager of my own.  The result, from around 2009, was
 [literate Haskell](https://en.wikipedia.org/wiki/Literate_programming)
 (if you check the Mousetoxin link, you'll find it's a PDF - the actual
 source has been lost).  It worked quite well, and I used it for a
-couple of years.  About a year later, I did switch to
+couple of years.  I did eventually switch to
 [xmonad](https://xmonad.org/) to fit in with the rest of the Haskell
-community, although I did end up [writing an entire programming
+community, although I also ended up [writing an entire programming
 language](../projects/sindre) just so I could write a few tools (like
 [gsmenu](../projects/gsmenu)) for interacting with it.  It made sense
 at the time, but in retrospect it was a bit silly.
@@ -58,7 +58,7 @@ at the time, but in retrospect it was a bit silly.
 I used xmonad for years, right up until curiosity made me switch over
 to GNOME 3 around 2016.  Most of my work was (and is) done in a full
 screen Emacs session, and GNOME supported that well enough, while
-having fewer bugs than xmonad.  EVentually I did grow tired of being a
+having fewer bugs than xmonad.  Eventually I did grow tired of being a
 [WIMP](https://en.wikipedia.org/wiki/WIMP_(computing)) and in June of
 2019, I switched to [sway](https://swaywm.org/), after I figured out
 [how to make it act like
