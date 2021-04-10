@@ -38,7 +38,7 @@ h1 {
 
 h2 {
     margin-top: 1em;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 #header, #footer {
@@ -200,6 +200,14 @@ h1>a, h2>a, h3>a:hover {
 pre {
     background-color: var(--prebg);
     margin: 1em;
+}
+
+code {
+    font-weight: bold;
+}
+
+pre > code {
+    font-weight: normal;
 }
 
 /* Blog styling */
