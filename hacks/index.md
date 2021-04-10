@@ -2,7 +2,7 @@
 title: Hacks
 ---
 
-Minor scripts, hacks and patches
+Minor scripts and hacks
 ===========
 
 I put minor hacks and scripts here.  Some may be of use to others but
