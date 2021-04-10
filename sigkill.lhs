@@ -3,7 +3,7 @@ The Sigkill.dk generator
 
 This is the Hakyll program for generating sigkill.dk (see my [Hakyll
 tutorial](/writings/guides/hakyll.html)).  Look at [this Git
-repository](https://github.com/Athas/sigkill.dk) for the data files as
+repository](https://github.com/athas/sigkill.dk) for the data files as
 well.  The most defining trait of the site is the tree menu at the
 top, which contains every content page on the site.  Apart from that,
 I also do a lot of small hacks to generate various bits of the site.
@@ -287,9 +287,13 @@ Adding the hacks to a page is now just loading everything with version
 Extracting update times
 ---
 
+We extract a timestamp by invoking `git log` on the given file,
+passing a bunch of options that ultimately results in the ISO 8601
+date (YY-MM-DD) for the most recent commit for the file.
+
 > getUpdateTime :: FilePath -> Compiler String
 > getUpdateTime f =
->   unixFilter "git" ["log", "-1", "--format=%ad", "--", f] ""
+>   unixFilter "git" ["log", "-1", "--format=%ad", "--date=format:%F", "--", f] ""
 
 Putting it all together
 ---
