@@ -24,15 +24,10 @@ Please excuse any pompous introductions for folders containing naught
 but a five-line shell script.
 
 For those curious about technical details, this site is statically
-generated via the nifty Hakyll framework, although it used to be
-written in shell script via the pretty good [werc anti-framework][6].
-The source code is available [here][sigkillsource].
-
-In case all this is too boring for you, why not check out
-[topDatamat][7]?  It's a Danish (English subtitles) sketch show, sort
-of inspired by Top Gear, that we film in the basement under the
-department of computer science at the University of Copenhagen.  I'm
-involved as writer and (very poor) actor.
+generated via the nifty [Hakyll](https://jaspervdj.be/hakyll/)
+framework, although it used to be written in shell script via the
+pretty good [werc anti-framework][6].  The source code is available
+[here][sigkillsource].
 
 [1]: /me
 [2]: /programs
@@ -40,7 +35,6 @@ involved as writer and (very poor) actor.
 [4]: /hacks
 [5]: /blog
 [6]: http://werc.cat-v.org/
-[7]: http://topdatamat.dk
-[sigkillsource]: http://github.com/Athas/sigkill.dk
+[sigkillsource]: http://github.com/athas/sigkill.dk
 [diku]: http://diku.dk
 [futhark]: http://futhark-lang.org
