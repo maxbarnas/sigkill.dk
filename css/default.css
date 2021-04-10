@@ -1,6 +1,18 @@
+:root {
+    --bg: black;
+    --prebg: black;
+    --text: #ffb000;
+    --headertext: black;
+    --headerbg: #b27b00;
+    --menu0bg: #a06e00;
+    --menu1bg: #8e6200;
+    --menu2bg: #7c5600;
+}
+
 body {
-    background-color: #eee;
-    font-family: sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: monospace;
     padding: 0px;
     margin: 0px;
     margin-left: auto;
@@ -18,7 +30,6 @@ body {
 
 body > * {
     margin: 1%;
-  text-align: justify;
 }
 
 h1 {
@@ -31,109 +42,102 @@ h2 {
 }
 
 #header, #footer {
-  background-color: #888;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
-  margin: 0;
-  margin-bottom: 2%;
-  line-height: 170%;
+    background-color: var(--headerbg);
+    margin: 0;
+    margin-bottom: 2%;
 }
 
 #header a {
-  font-weight: bold;
-  font-variant: normal;
-  font-family: sans-serif;
-  border: 0;
+    font-weight: bold;
+    font-variant: normal;
+    font-family: monospace;
+    border: 0;
 }
 
 .superHeader ul {
-  margin: 0;
+    margin: 0;
 }
 
 .superHeader li {
-  display: inline;
-  list-style-type: none;
-  float: right;
-  border-left: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
-  margin: 0;
-  padding: 0;
+    display: inline;
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    padding: 0;
 }
 
 .superHeader a {
-  color: #eee;
-  padding: 5px;
+    color: var(--bg);
+    padding: 5px;
 }
 
 .superHeader a:hover {
-  background-color: #aaa;
-  text-decoration: none;
+    background-color: var(--bg);
+    color: var(--text);
+    text-decoration: none;
 }
 
 .headerTitle, .headerTitle a {
-  color: #eee;
-  font-family: serif;
-  margin: 1%;
+    color: var(--bg);
+    font-family: serif;
+    margin: 1%;
 }
 
 .subHeader ul {
-  margin: 0;
-  list-style-type: none;
-  list-style-image: none;
+    margin: 0;
+    list-style-type: none;
+    list-style-image: none;
 }
 
 .subHeader li {
-  display: inline-block;
-  border-right: 1px solid #000;
-  margin: 0;
-  padding: 0;
+    display: inline-block;
+    border-right: 1px solid var(--bg);
+    margin: 0;
+    margin-top: 0.5em;
 }
 
 .subHeader a {
-  color: #113;
-  padding: 5px;
+    color: var(--bg);
+    padding: 0.5em;
+    margin: 0;
 }
 
 .subHeader a:hover, .thisPage {
-  background-color: #eee;
+    background-color: var(--bg);
+    color: var(--text) !important;
 }
 
 .menu0 {
-  background-color: #999;
+    background-color: var(--menu0bg);
 }
 
 .menu0 li {
-    border-right: 1px solid #777;
+    border: 0;
 }
 
 .menu1 {
-  background-color: #aaa;
+    background-color: var(--menu1bg);
 }
 
 .menu1 li {
-    border-right: 1px solid #888;
+    border: 0;
 }
 
 .menu2 {
-  background-color: #bbb;
+    background-color: var(--menu2bg);
 }
 
 .menu2 li {
-    border-right: 1px solid #999;
-}
-
-#hakyllLink {
-  color: #eee;
-  border: 0;
-  margin-left: 5%;
+    border: 0;
 }
 
 .progName {
-  font-family: monospace;
+    font-family: monospace;
+    font-style: italic;
 }
 
 #updatedDate {
-    color: #eee;
+    color: var(--bg);
     text-align: right;
     margin-left: 1em;
     margin-right: 1em;
@@ -142,77 +146,60 @@ h2 {
 /* # General styling # */
 
 img {
-  position: relative;
-  float: right;
+    position: relative;
+    float: right;
 }
 
 table {
-  margin: 15px;
-  background-color: transparent;
-  border: 0px dashed #999;
+    margin: 15px;
+    background-color: transparent;
+    border: 0px dashed var(--bg);
 }
 
 hr {
-  margin: 0;
+    margin: 0;
 }
 
 td {
-  background-color:#DDD;
-  border:1px solid #999;
-  padding:0.2em 20px 0.2em 10px;
+    background-color: var(--bg);
+    border:1px solid var(--text);
+    padding:0.2em 20px 0.2em 10px;
 }
 
 a {
-  color: rgb(0, 0, 192);
+    color: var(--text);
 }
 
 a:link, a:visited {
-  text-decoration: none;
-  border-bottom: 1px dashed #eee;
+    text-decoration: none;
+    border-bottom: 1px solid var(--text);
 }
 
 a:active, a:hover {
-  text-decoration: underline;
-}
-
-p > a {
-  border: 1px solid transparent;
-  color: rgb(0, 0, 192);
-}
-
-p > a:link, p > a:visited {
-  text-decoration: none;
-  border: 1px solid transparent;
-  border-bottom: 1px dashed #eee;
-}
-
-p > a:active, p > a:hover {
-  border: 1px solid #000;
+    text-decoration: none;
 }
 
 a img {
-  border: 0px;
+    border: 0px;
 }
 
 li {
-  margin-left: 2%;
+    margin-left: 2%;
 }
 
-h3>a {
-  color: #000;
-  text-decoration: none;
+h1>a, h2>a, h3>a {
+    color: var(--text);
+    text-decoration: none;
 }
 
-h3>a:hover {
-  color: #000;
-  text-decoration: none;
+h1>a, h2>a, h3>a:hover {
+    color: var(--text);
+    text-decoration: none;
 }
 
 pre {
-  background-color: #ddd;
-  border: 1px solid #bbb;
-  padding-left:0px;
-  margin: 1em;
+    background-color: var(--prebg);
+    margin: 1em;
 }
 
 /* Blog styling */
@@ -229,18 +216,18 @@ pre {
 /* # General util # */
 
 .left {
-  float: left;
+    float: left;
 }
 
 .right {
-  text-align: right;
+    text-align: right;
 }
 
 .doNotDisplay {
-  display: none;
+    display: none;
 }
 
 .sourceCode {
     border: 0;
-    background-color: #eee;
+    background-color: var(--prebg);
 }
