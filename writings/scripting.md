@@ -56,7 +56,7 @@ tempted to use `sed`, but then you will have to escape the string in
 order to embed it within a regular expression.  You might eye `fgrep
 -v`, but if you don't need to delete the line, but just change it in
 some way, that's still not good enough.  My preference so far is to
-bite the bullet and the biggest hammer in the toolbox:
+bite the bullet and use the biggest hammer in the toolbox:
 
     awk 'index($0,STR)!=0 { /* do whatever */ }' 'STR=any string that you can dream of'
 

@@ -23,7 +23,7 @@ One workaround is to use `gpg` to manually decrypt the password:
 $ nix-shell -p gnupg --run 'gpg --decrypt --pinentry-mode=loopback < ~/.password-store/foo.gpg'
 ```
 
-But this sucks.  A beter solution is to install `pinentry-curses` (put
+But this sucks.  A better solution is to install `pinentry-curses` (put
 it in your `systemPackages` in your NixOS configuration), and then
 modify `$HOME/.gnupg/gpg-agent.conf` to contain the following:
 
