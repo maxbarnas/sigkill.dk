@@ -72,9 +72,10 @@ containing binary builds of the Futhark compiler.
 
 I am mostly happy with this setup, but it does have problems.  One is
 that I link statically with `glibc` - this is usually considered a bad
-idea, because `glibc`s name lookup service depends on dynamic linking.
-The program we're building doesn't do any network requests, so this
-does not matter to us, but it might matter to others.
+idea, because `glibc`'s name lookup service depends on dynamic
+linking.  The program we're building doesn't perform any network
+requests, so this does not matter to us, but it might matter to
+others.
 
 Another problem is that the program is built against the Haskell
 packages present in the pinned version of Nixpkgs.  This usually
