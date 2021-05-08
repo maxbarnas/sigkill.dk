@@ -3,6 +3,11 @@ title: Another Haskell and Nix setup
 description: How to compile a Haskell program with Nix in just the right way.
 ---
 
+**Note: after reading this post, read [this Reddit
+post](https://www.reddit.com/r/haskell/comments/n6f9ds/another_haskell_and_nix_setup/gxdyl55/?context=3)
+by a Nixpkgs Haskell maintainer who has many good suggestions for
+further improvement.**
+
 There are already several guides on how to build Haskell programs with
 [Nix](https://nixos.org/) out there.  However, when I set up Nix-based
 builds for a [Haskell program I maintain](https://futhark-lang.org/),
