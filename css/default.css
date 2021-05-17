@@ -199,7 +199,9 @@ h1>a, h2>a, h3>a:hover {
 
 pre {
     background-color: var(--prebg);
-    margin: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 3ex;
 }
 
 code {
