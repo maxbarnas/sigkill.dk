@@ -31,7 +31,7 @@ pretty good [werc anti-framework][6].  The source code is available
 
 [1]: /me
 [2]: /programs
-[3]: /config
+[3]: /me/config.html
 [4]: /hacks
 [5]: /blog
 [6]: http://werc.cat-v.org/
