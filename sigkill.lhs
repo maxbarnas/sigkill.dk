@@ -20,18 +20,20 @@ There is also a simple blog system, with one file per post.
 > import Data.Maybe
 > import Data.Monoid
 > import System.FilePath
+> import System.Directory (removeFile)
 
 > import Text.Blaze.Internal (preEscapedString)
 > import Text.Blaze.Html5 ((!))
 > import qualified Text.Blaze.Html5 as H
 > import qualified Text.Blaze.Html5.Attributes as A
 > import Text.Blaze.Html.Renderer.String (renderHtml)
-> import           Text.Pandoc
-> import           Text.Pandoc.Walk
+> import Text.Pandoc
+> import Text.Pandoc.Walk
+> import Hakyll.Web.Pandoc (renderPandocWith, renderPandocWithTransform)
 
 > import Hakyll
 
-Hierarchical menu.
+Hierarchical menu
 ---
 
 We are going to define a data type and associated helper functions for
@@ -382,14 +384,14 @@ any `.md` file in the root directory.  This property is checked by the
 `content` pattern.
 
 We divide the content into two sets: content *pages*, which is all
-content of types `.md`, `.lhs` and `.man`, and content *data*, which
+content of types `.md`, `.lhs`, `.fut`, and `.man`, and content *data*, which
 is the rest.
 
 >   let inContentDir = "me/**" .||. "writings/**" .||. "hacks/**" .||.
 >                      "programs/**" .||. "projects/**" .||. "*.md"
->       nothidden = complement "**/.**" .&&. complement ".*/**"
+>       nothidden = complement "**/.**" .&&. complement ".*/**" .&&. complement "**flycheck**"
 >       content = inContentDir .&&. nothidden
->       contentPages = content .&&. fromRegex "\\.(md|lhs|man)$"
+>       contentPages = content .&&. fromRegex "\\.(md|lhs|fut|man)$"
 >       contentData = content .&&. complement contentPages
 
 Content data is copied verbatim, as it is expected to be images and
@@ -398,20 +400,21 @@ similar non-processable data.
 >   match contentData static
 
 Content pages will end up as HTML files.  This is conceptually a
-simple process: they are added to list of pages contained in the
-menu, processed by a *content compiler*, which is `manCompiler` for
-manpages, and `contentCompiler` (which we will see later) for all
-other files, although everything gets instantiated with the same
-template in the end.  Some pages also need special generated
-content: the hacks-page needs a list of hacks.  These are special-cased in an
-intermediate step.
+simple process: they are added to list of pages contained in the menu,
+processed by a *content compiler*, which is `manCompiler` for
+manpages, `futCompiler` for Futhark programs, and `contentCompiler`
+(which we will see later) for all other files, although everything
+gets instantiated with the same template in the end.  Some pages also
+need special generated content: the hacks-page needs a list of hacks.
+These are special-cased in an intermediate step.
 
 >   match contentPages $ do
 >     addToMenu
 >     route $ setExtension "html"
 >     compile $ do
 >       context <- contentContext
->       createByPattern contentCompiler [("**.man", manCompiler)]
+>       createByPattern contentCompiler [("**.fut", futCompiler),
+>                                        ("**.man", manCompiler)]
 >         >>= modifyByPattern return [("hacks/index.md", addHacks)]
 >         >>= loadAndApplyTemplate "templates/default.html" context
 >         >>= relativizeUrls
@@ -539,5 +542,21 @@ whitespace formatting.
 >               >>= withItemBody (unixFilter "groff" (words "-m mandoc -T utf8")
 >                                 >=> unixFilter "col" ["-b"]
 >                                 >=> return . renderHtml . H.pre . H.toHtml)
+
+Futhark programs (with the `.fut` extension) are taken to be literate
+Futhark programs, and processed with `futhark literate`.  We need to play tricks with the `itemIdentifier` because `renderPandocWith` expects an `.md` extension.
+
+> futCompiler :: Compiler (Item String)
+> futCompiler = do
+>   source <- getResourceFilePath
+>   void $ unixFilter "futhark" ["literate", source] mempty
+>   let mdfile = source `replaceExtension` "md"
+>   item <- makeItem =<< unsafeCompiler (readFile mdfile)
+>   let oldident = itemIdentifier item
+>   unsafeCompiler $ removeFile mdfile
+>   item' <- renderPandocWithTransform defaultHakyllReaderOptions defaultHakyllWriterOptions
+>            (walk selfLinkHeader)
+>            item { itemIdentifier = fromFilePath mdfile }
+>   pure item' { itemIdentifier = oldident }
 
 And that's it.

@@ -78,7 +78,7 @@ let cubic_root a b c d : f64 =
 
 -- > cubic 4.0 5.0 (-6.0) (-8.0) (cubic_root 4.0 5.0 (-6.0) (-8.0))
 
--- ## Benchmarking
+-- ## Benchmarking yet again
 --
 -- Now let's try benchmarking.  Newton's method is extremely sensitive
 -- to the starting point.  I somewhat arbitrarily decide on `x0=0`.

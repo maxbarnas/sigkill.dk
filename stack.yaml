@@ -13,3 +13,4 @@ ghc-options:
 
 nix:
     packages: [zlib.dev, zlib.out, pkgconfig, openssl, rsync, openssh, groff, utillinux]
+    pure: false
