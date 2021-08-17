@@ -9,7 +9,7 @@ Troels Henriksen's website
 
 Welcome to my website.  My name is Troels Henriksen, and I am a Danish
 hacker ([more about me][1]) and general enthusiast in all matters
-computing.  I am presently working as a postdoctoral researcher at
+computing.  I am presently working as assistant professor at
 [DIKU][diku], the computing department at the University of
 Copenhagen, where I do research into optimising compilers for
 data-parallel languages.  Concretely, I am working on [the Futhark
