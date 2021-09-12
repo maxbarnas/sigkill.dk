@@ -5,7 +5,7 @@ title: kill -9
 Troels Henriksen's website
 ================================
 
-[athas@sigkill.dk](mailto:athas@sigkill.dk) [gpg](/pubkey.asc) [ssh](/id_rsa.pub)
+[athas@sigkill.dk](mailto:athas@sigkill.dk) [gpg](/pubkey.asc) [ssh](/id_rsa.pub) [twitter](https://twitter.com/sigkill_dk) [scholar](https://scholar.google.com/citations?user=ZRnriNQAAAAJ&hl=en)
 
 Welcome to my website.  My name is Troels Henriksen, and I am a Danish
 hacker ([more about me][1]) and general enthusiast in all matters
