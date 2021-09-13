@@ -23,13 +23,14 @@ Simple examples of list homomorphisms:
 * The identity function, with `⊙` being `++`.
 * Summation, with `⊙` being `+`.
 
-Operationally, a list homomorphism means we can split the input into
-any number of *chunks*, a result per chunk, and then combine the
-results into a final result for the whole list.  This allows parallel
-execution.  For the purpose of this text, we can consider "list" to
-mean "array", which is perhaps more practical.  We will not depend on
-our "lists" having the behaviour of linked lists, and using linked
-lists would actually inhibit parallelisation.
+Operationally, when computing a list homomorphism we can split the
+input into any number of *chunks*, compute a result per chunk, and
+then combine the results into a final result for the whole list.  Each
+chunk can be processed independently of the others, in parallel.  For
+the purpose of this text, we can consider "list" to mean "array",
+which is perhaps more practical.  We will not depend on our "lists"
+having the behaviour of linked lists, and using linked lists would
+actually inhibit parallelisation.
 
 We'll assume that `h` is defined for empty inputs such that
 ```
