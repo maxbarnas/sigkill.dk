@@ -82,8 +82,8 @@ Then we define an associative operator for combining our tuples:
    tsx + tsy)
 ```
 
-(Proof of associativity left for the reader.)  This operator has a
-neutral element:
+(Proof of associativity left for the reader.)  This operator has an
+identity element:
 
 ```
 e = (0, 0, 0, 0)
@@ -124,7 +124,7 @@ f xs = reduce ⊙ e (map f xs)
 
 This theorem means that we can represent a list homomorphism as a
 function `f : a -> b`, an associative binary operator `⊙ : b -> b ->
-b`, and its neutral element `e`.  In many cases `f` is merely the
+b`, and its identity element `e`.  In many cases `f` is merely the
 identity function, which gives us the `reduce` commonly found in
 parallel programming systems.
 
