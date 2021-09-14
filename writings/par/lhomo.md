@@ -32,11 +32,11 @@ which is perhaps more practical.  We will not depend on our "lists"
 having the behaviour of linked lists, and using linked lists would
 actually inhibit parallelisation.
 
-We'll assume that `h` is defined for empty inputs such that
+In principle `h` need not be defined for empty inputs, but we'll assume that it is, such that
 ```
 h [] = e
 ```
-where `e` is necessarily an [identity element](https://en.wikipedia.org/wiki/Identity_element) for `⊙`.  This is strictly not required for a list homomorphism, but it makes my life simpler.
+where `e` is necessarily an [identity element](https://en.wikipedia.org/wiki/Identity_element) for `⊙`.  This is strictly not required for a list homomorphism, but it makes the following discussion simpler.
 
 ## Example of a nontrivial homomorphism
 
