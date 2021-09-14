@@ -133,7 +133,7 @@ parallel programming systems.
 If `(f,⊙,e)` represents a list homormorphism, then
 
 ```
-reduce ⊙ e (map f xs) = foldl ⊕ e xs = foldr ⊗ e ys
+reduce ⊙ e (map f xs) = foldl ⊕ e xs = foldr ⊗ e xs
 ```
 
 where

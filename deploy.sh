@@ -2,7 +2,7 @@
 
 set -e
 
-cabal exec sigkill clean
-cabal exec sigkill build
-cabal exec sigkill deploy
+cabal run sigkill clean
+cabal run sigkill build
+cabal run sigkill deploy
 git push
