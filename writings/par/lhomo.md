@@ -119,7 +119,7 @@ If `h` is a list homomorphism, then there is an operator `⊙` and
 function `f` such that
 
 ```
-f xs = reduce ⊙ e (map f xs)
+h xs = reduce ⊙ e (map f xs)
 ```
 
 This theorem means that we can represent a list homomorphism as a
