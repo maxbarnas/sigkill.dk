@@ -48,9 +48,9 @@ homomorphism - knowing `mssp x` and `mssp y` is not enough to compute
 `mssp (x++y)`.  Example:
 
 ```
-mssp [3,-1,2]               = 3
-mssp [2,-1,3]               = 3
-mssp ([3,-1,2] ++ [2,-1,3]) = 4
+mssp [3,-1,1]               = 3
+mssp [1,-1,3]               = 3
+mssp ([3,-1,1] ++ [1,-1,3]) = 4
 ```
 
 But if we extend the domain a bit, we can indeed obtain a
