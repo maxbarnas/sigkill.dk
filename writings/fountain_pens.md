@@ -32,8 +32,7 @@ in computer science.
 Fountain pens are simple devices.  The physics behind their
 functioning is easy to understand, and the writing process involves no
 moving parts.  They can be understood in their entirety, and do not
-easily wear out or become obsoleted by technical innovations.  They
-can be understood in their entirety and have an air of permanence.  In
+easily wear out or become obsoleted by technical innovations.  In
 this, fountain pens are very dissimilar from the incomprehensibly
 complex devices I interact with in my daily work.  Yet, pens still
 have enough depth to make exploring their differences enjoyable.
